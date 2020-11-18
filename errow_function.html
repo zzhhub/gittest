@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select style="width: 200px;">
+        <option>暂无数据</option>
+    </select>
+
+    <script>
+        
+        // "use strict";
+
+        let ele = document.getElementsByTagName("select")[0];
+        const array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+        let html = "";
+        for(let i=0; i<array.length;i++){
+            html += `<option>${array[i]}</option>`;
+        }
+        ele.innerHTML = html;
+
+        // // 模板字符串 ··
+        // const person = {
+        //     username:"Lily",
+        //     age:"29",
+        //     job:"teacher"
+        // }
+
+        // const alex = "我叫"+person.username+",是一名"+person.job+"，今年"+person.age+"岁！";
+        // console.log(alex);
+
+        // const info = `我叫${person.username},是一名${person.job}，今年${person.age}岁！`;
+        // console.log(info);
+
+        // const info2 = `我叫\`${person.username}\`,是一名\\${person.job}\\，今年${person.age}岁！`;
+        // console.log(info2);
+
+        // 函数表达式
+        // const func = function (){
+        //     return "Web攻城狮";
+        // };
+        // const text = `慕课网前端${func()}`;
+        // console.log(text);
+
+        // const/let 函数名 = 参数 => 函数体  其它地方调用函数名
+        // function yes(){};
+        // const yes = function(){}
+        // const yes = ()=>{}
+
+
+        // (function(){})()
+        // (()=>{})()
+
+        // 参数  函数体  单行对象
+        // const num1 = (x)=>{return x+1};
+        // const num1 = x=>{return x+1};
+
+        // const num1 = ()=>{return x+1};
+        // const num1 = ()=>{return 1};
+
+        // const num1 = x => x+1;
+
+        // console.log(this);
+
+        // function person(name){
+        //     this.name = name;
+        //     console.log(this);
+        // }
+
+        // const p = new person("lulu");
+
+
+        // const calc = {
+        //     add:function(){
+        //         const adder = () =>{
+        //             console.log(this);
+        //         }
+        //         adder();
+        //     }
+        // }
+        // calc.add(); //{add:f}
+
+        // const calcf = calc.add;
+        // calcf(); //undefined window
+
+        // document.onclick = function(){
+        //     console.log(this);
+        // }
+
+        // document.addEventListener(
+        // "click",
+        // function(){
+        //     console.log(this);
+        // },
+        // false
+        // )
+
+        // document.addEventListener(
+        // "click",
+        // ()=>console.log(this),
+        // false
+        // )
+
+        // function add(){
+        //     console.log(arguments)
+        //     console.log(this)
+        // }
+        // add(1,2.3);
+
+        // const add = () => console.log(arguments)
+        // add(1,2,3);
+
+        
+    </script>
+</body>
+</html>

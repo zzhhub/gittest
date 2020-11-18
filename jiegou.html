@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>120</p>
+    <p>121</p>
+    <p>123</p>
+    <p>124</p>
+    <script>
+
+        // const array = [1,2,3];
+        // console.log(...array)
+
+        // const [a,[ , ,b],c] = [1,[2,3,4],5]
+        // console.log(b)
+
+        // const arr = ["a",["b","c",["d"],[undefined,"g",["x"],["y"]]],"h",["l"]];
+        // /*补充代码*/
+
+        // const [,[,,,[m,,[n],],,]] = arr;
+        // console.log(m,n)
+
+        // function getArg(){            
+        //     // console.log(arguments)
+
+        //     const [a1="y",a2="k"] = arguments;
+        //     console.log(a1,a2)
+        // }
+        // getArg();
+        // getArg(1,2);
+
+
+        // const [p1,p2,p3,p4] = document.querySelectorAll("p")
+        // console.log(p1,p2,p3,p4)
+
+        // const arr = [1,2,3,45]
+        // const add = ([x=1,y=2,z=3,q=45]) => x+y+z+q
+        // // console.log(add(arr)) //51
+        // console.log(add([])) //51
+
+        // let x = 1;
+        // let y = 2;
+        // [x,y] = [y,x]
+        // // [x,y] = [2,1]
+        // console.log(x,y) //2 1
+
+        // let x=10;
+        // let y=20;
+        // let z=30;
+
+        // [x,y,z] = [z,x,y]
+        // console.log(x,y,z)
+
+        // const {'list':list,'item':item} = {list:1,item:2}
+        // console.log(list,item)
+
+        // 
+        // const {'list':list,'item':value} = {list:1,item:2}
+        // console.log(list,value)
+
+        // const { uname = "mili", uage = 20 } = { uname: 'cancy', uage: 'null' }
+        // console.log(uname, uage)
+
+        // const x=1;
+        // ({x} = {x:1})
+        // console.log(x)
+
+        // const getUserInfo = ({username="YAMY",age="20"}) => console.log(username,age)
+        // getUserInfo({username:"MIKY",age:undefined})
+
+        // const getUserInfo = ({username,age}) => console.log(username,age)
+        // getUserInfo({})
+
+        // const getInfo = user => console.log(user.name,user.age);
+        // getInfo({name:"AMY",age:19})
+
+        // const getInfo = ({name="AMY",age=19}) => console.log(name,age);
+        // getInfo({name:"buk",age:29})
+        // getInfo({})
+
+
+        const obj = {
+            x:1,
+            y:[2,3,4],
+            z:{
+                a:5,
+                b:6
+            }
+        }
+        const {y:[ ,k]} = obj
+        console.log(k)
+
+        
+    </script>
+</body>
+
+</html>

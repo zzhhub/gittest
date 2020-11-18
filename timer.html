@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            margin: 20px 0;
+            line-height: 30px;
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <button id="start">开始</button>
+    <button id="stop">停止</button>
+    <div id="box"></div>
+    <script>
+        const startBtn = document.getElementById('start')
+        const stopBtn = document.getElementById('stop')
+        const box = document.getElementById('box')
+        var show = {
+            content: "Hello World",
+            timer: null,
+            start: function () {
+                // 在此补充代码
+                this.timer = setInterval(()=>{
+                    box.innerHTML+=`<span>${this.content} </span>`
+                },1000)
+            },
+            stop: function () {
+                // 在此补充代码
+                clearInterval(this.timer);
+            },
+        }
+         // 在此补充代码
+         startBtn.addEventListener("click",function(){
+             show.start();
+         });
+         
+         stopBtn.addEventListener("click",function(){
+             show.stop();
+         });
+
+
+         const a = () => "Web攻城狮";
+    
+         console.log(`慕课网前端${a()}`)
+
+    </script>
+</body>
+</html>

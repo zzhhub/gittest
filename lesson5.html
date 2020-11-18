@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 剩余参数
+        // const add = (x,y,z,...args) => {};    
+
+
+        // const add = (x,y,z,...args) => {console.log(x,y,z,args)};    
+
+        // add(1,2,3);
+        // add(1,2,3,4,5);
+
+        // 剩余参数不可以省略圆括号
+        // const add = (...args) => { console.log(...args) }
+        // add(1, 2, 3);
+
+        // // 剩余参数代替arguments
+        // // const argus = function() {console.log(arguments)}
+        // const argus = (...args) => { console.log(args) }
+        // argus(1, 2, 3);
+
+        // // 剩余参数只能放在最后一个
+
+        // // 求取平均值
+        // const avg = (...args) => {
+        //     let result = 0
+        //     for (let i = 0; i < args.length; i++) {
+        //         result += args[i];
+        //     }
+        //     return result / args.length
+        // }
+        // console.log(avg(1, 2, 3, 4)) 
+
+        // 剩余参数与解构赋值,必须放最后一个位置
+        // const [a,...args] = [1,2,3,4]
+        // console.log(a,args)
+
+        // const funx = ([...args]) => { console.log(args) }
+        // funx([1, 2, 3])
+
+        // const { x, y, ...z } = { x: 1, y: 2, z: 3, b: 4 }
+        // console.log(x, y, z)
+
+        // const fuc = ({x,...args}) => {console.log(x,args) }
+        // fuc({x:1,y:2,z:3})
+
+        // var arr = [1, 2, 3, 4];
+        // var sum = arr.reduce(function(prev, cur, index, arr) {
+        //     console.log(prev, cur, index);
+        //     return prev + cur;
+        // })
+
+        // const add = (...args) =>{
+        //     // 在此补充代码
+        //     let sum = args.reduce((prev,cur,index,args)=>{ 
+        //         // console.log(prev, cur, index);
+        //         return prev + cur;
+        //     })
+
+        //     return sum
+        // }
+
+        // document.write(add(1,2,3,4,5))
+
+        
+    </script>
+</body>
+
+</html>

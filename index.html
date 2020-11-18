@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{color: #333;font-size: 12px;line-height: 30px;cursor: pointer;}
+        li.curr{color: #f00;font-size: 28px;}
+    </style>
+</head>
+<body>
+    
+</body>
+    <ul id="ul">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>Jquery</li>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>ES6</li>
+    </ul>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+    
+    //获取所有的li标签
+    let list = document.getElementsByTagName("li");
+    for (let i = 0; i < list.length; i++) {
+        //为li注册鼠标进入事件
+        list[i].onmouseover = function () {
+            console.log(this)
+            //设置其背景颜色为黄色
+            this.style.backgroundColor = "yellow";
+        };
+        //为li注册鼠标离开事件
+        list[i].onmouseout = function () {
+            //恢复到这个标签默认的颜色
+            this.style.backgroundColor = "";
+        };
+    }
+
+
+    // const lis = $("#ul li").length;
+
+    // for (let i = 0; i < lis; i++) {
+    //     let text = $("#ul li").eq(i).text();
+    //     let str = "我是第" + (i + 1) + "个";
+    //     $("#ul li").eq(i).hover(function () {
+    //         $(this).text(text + str).addClass("curr").siblings().removeClass("curr");
+    //     }, function () {
+    //         $(this).text(text).removeClass("curr");
+    //     });
+    // }
+    
+    // const lis = document.getElementsByTagName("li");
+    // // console.log(lis)
+
+    // for(let i=0;i<lis.length;i++){
+    //     let text = lis[i].innerText;
+    //     let strText = `${text}我是第${i+1}个`;
+    //     lis[i].onmouseover = function(){
+    //         lis[i].innerHTML = strText;
+    //         lis[i].className = 'curr'
+    //     };
+    //     lis[i].onmouseout = function(){
+    //         lis[i].innerHTML = text;
+    //         lis[i].className = '';
+    //     };
+    // }
+
+    // var username = "MIMI";
+    // let age = 18;
+    // const email = "865433332@qq.com";
+    // console.log(username,age,email);
+    
+    // username = "mimi2";
+    // age=28;
+    // email = "null";
+    // console.log(username,age,email);
+    
+    // const emailnew = email;
+    // console.log(username,age,emailnew);
+
+    // emailnew = "nucy.163.com";    
+    // console.log(username,age,emailnew);
+
+// 引用数据类型   在不重新赋值的情况下可以修改const常量的值
+    // const person = {user:"mimi"};
+    // console.log(person.user);
+
+// 改变引用地址指向
+    // person.user = "coco";
+    // console.log(person.user);
+
+// 重复声明  var可以  let const 不可以
+// var a = 1;
+// console.log(a);
+// var a = 2;
+// console.log(a);
+
+// let b;
+// console.log(b);
+// let b = 2;
+// 变量提升  var 可以提升声明 undefined   let与const不可以提升
+// console.log(b);
+// let b = 2;
+
+// 暂时性死区 ：let const有   var无
+// 只要当前作用于存在 let const 声明，那么就会自动绑定这个区域  不在受外部作用域的影响
+// let yes = "momo";
+// function yesf() {
+//     console.log(yes);
+//     var yes = "lili";
+// }
+// yesf();
+
+// window对象的属性与方法
+// 全局作用域中，通过var，function声明的变量与方法函数   自动变成window对象的属性或方法
+// let const不会
+// let yes = "momo";
+// function yesf() {
+//     console.log(yes);
+//     // let yes = "lili";
+// }
+// yesf();
+// console.log(window.yesf());
+
+// var无块级作用域
+// var array = [1,2,3];
+// for (let i = 0; i < array.length; i++) {
+//     const element = array[i];
+//     console.log(element);
+// }
+
+// let/const有全局作用域             
+// for (let i = 0; i < 3; i++) {
+//     console.log(i);
+// }
+// console.log(i);
+
+</script>
+</html>
