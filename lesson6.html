@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div"></div>
+    <script>
+        //展开运算符
+        // [1,2,3] > 1,2,3
+
+        // 数组展开运算符
+        // console.log(Math.max(...[1, 2, 9, 3]))
+
+
+        // function random(min, max) {
+        //     return Math.floor(Math.random() * (max - min)) + min;
+        // }
+        // // 随机数
+        // let arr = []
+        // for (let i = 0; i < 10; i++) {
+        //     arr.push(random(0, 100))
+        // }
+
+        // const newArr = arr.sort((x, y) => y - x);
+
+
+        // const max = Math.max.apply(Math, arr);
+        // const min = Math.min.apply(Math, arr);
+
+        // document.getElementById("div").innerHTML = `${newArr} <br/> 这组数中最大值是:${max},最小值是:${min}`
+
+
+        // 展开运算符
+        // [3,2,1]  > 3,2,1
+
+        // 剩余参数（剩余元素）
+        // 3,2,1 > [3,2,1]
+        // const as = ({a,...args}) =>{console.log(args);}//剩余元素
+        // const ab = ([a,...args]) =>{console.log(args);}//剩余元素
+
+        // const bd = ([a],...args) =>{console.log(args);}//剩余参数
+        // const bk = (...args) =>{console.log(args);}//剩余参数
+
+        // 剩余参数（元素）与 展开运算符
+        // const s = (...args) =>{
+        //     // console.log(args) //打印剩余元素
+        //     console.log(...args) //展开运算符
+
+        // }
+        // s(1,2,3)
+        // s()
+
+        // console.log([...[1,2,3],4]);
+        // console.log([...[1],2,3,4]);
+
+        // const a = [1,2]
+        // let b = a;
+        // b.push(3)
+        // console.log(a);
+        // console.log(b); //引用相同
+
+        // const a = [1,2]
+
+        // const c = [...a]
+        // a[0] = 3
+
+        // console.log(a)
+        // console.log(c)
+        
+    </script>
+</body>
+
+</html>
