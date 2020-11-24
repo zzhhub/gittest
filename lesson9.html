@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+
+    <script>
+        // 'use strict'
+        // // set Map
+        // const s= new Set()
+        // // console.log(s);
+        
+
+        // s.add(1).add(2).add(3);
+        // // console.log(s.size);
+        // // console.log(s);
+        // // console.log(s.has(2));
+        // const obj = {};
+
+        // // s.forEach(function (value,key,set) {
+        // //     // set value= key
+        // //     console.log(value,key,set===s);
+        // //     console.log(this);//1.undefined  严格模式下  2.s  window  3.document document  4.obj obj  调用者是谁就指向谁（2,3）
+        // // },obj)
+
+        // s.forEach( (value,key,set) =>{
+        //     // set value= key
+        //     console.log(value,key,set===s);
+        //     console.log(this);//作用域链  往外层寻找  s  window
+        // },obj)
+
+        // // s.delete(2);
+        // // console.log(s);
+
+        // // s.clear();
+        // // console.log(s);
+
+        // let s = new Set();
+
+        // s.add(1).add(2).add(3);
+        // console.log(s);
+
+        // s.delete(2);
+        // console.log(s);
+
+        // const ssize = s.size;
+        // console.log(ssize);
+
+        // s.forEach((value,key,set)=>
+        //     console.log(value,key,set)
+        // )
+
+        // 数组
+        // let s = new Set([1,2,3]);
+        // console.log(s);
+
+        // 字符串  argumnets NodeList Set
+        // let s = new Set("dasdad");
+        // console.log(s);
+        
+        // function fuc() {
+        //     console.log(arguments);
+        // }
+        // fuc(1,2,3)
+
+        // const p0 = document.querySelector("p")
+        // const p = document.querySelectorAll("p")
+        // console.log(p0);
+        // console.log(new Set(p));
+
+        // let s = new Set([1,2,3]);
+        // let k = new Set(s);
+        // console.log(s,k,s===k);
+
+        // let s = new Set([NaN,1,NaN]);
+        // console.log(s);
+
+        // console.log(NaN === NaN);
+        // console.log([] === []);
+        // console.log({} === {});
+
+        // let s = new Set();
+        // s.add([]).add([]);
+        // console.log(s);
+
+        // 何时使用set
+        // 去重数组元素 字符串   不用下标，仅仅用于遍历  用到方法便捷（add delete size clear has  forEach）
+
+                                            
+        // // 应用
+        // const a = [1,2,3,4,1,2,3]
+        // console.log(a);
+
+        // const k = new Set(a);
+        // console.log(k);
+
+        // const m = [];
+        // k.forEach((value,key)=>m.push(value))
+        // console.log(m);
+
+        // // 展开
+        // console.log(...k);
+        // console.log([...k]);
+
+// （1）先将字符串转成数组。
+
+// （2）将数组作为参数传入Set中。
+
+// （3）使用扩展运算符在数组中展开Set，将Set转成数组。
+
+// （4）最后再将数组转成字符串，输出到页面中。
+
+
+// 1、使用split方法，以空格为分隔符，将字符串转成数组。
+
+// 2、使用join方法，以空格为分隔符，将数组转成字符串。
+
+        let str = "study hard and make and progress every day study"
+        
+        const s = str.split("");
+        console.log(s);
+
+        const k = new Set(s);
+        console.log(k);
+
+        const n = [...k];
+        console.log(n);
+
+        const m = n.join("");
+        document.write(m)
+    </script>
+</body>
+</html>

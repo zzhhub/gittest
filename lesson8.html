@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 324px;
+            margin: 0 auto;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 3px;
+            background: #f01414;
+            color: #fff;
+        }
+
+        #intro {
+            width: 300px;
+            min-height: 100px;
+            line-height: 20px;
+            padding: 10px;
+            border: 2px solid gray;
+            border-radius: 3px;
+        }
+
+        h1 {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        div {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <button>添加</button>
+        <div id="intro"></div>
+    </div>
+    <script>
+        const btn = document.getElementsByTagName("button")[0];
+
+        const param1 = {
+            name: "功夫 ",
+            year: "2004",
+            director: "周星驰",
+            star: "周星驰 / 黄圣依",
+            type: "喜剧 / 爱情 / 奇幻 / 古装",
+            introduction: "　20世纪40年代的中国广东，孙悟空（周星驰）护送唐三藏（罗家英）去西天取经路上，与牛魔王合谋欲杀害唐三藏，并偷走了月光宝盒，此举使观音萌生将其铲除心思，经唐三藏请求，孙悟空被判五百年后重新投胎做人赎其罪孽...."
+        }
+
+        const getInfo = param => {
+            const intro = document.getElementById("intro");
+            const deParam = {
+                name: "大话西游之月光宝盒 ",
+                year: "2014",
+                director: "刘镇伟",
+                star: "周星驰 / 吴孟达 / 罗家英",
+                type: "喜剧 / 爱情 / 奇幻 / 古装",
+                introduction: "　孙悟空（周星驰）护送唐三藏（罗家英）去西天取经路上，与牛魔王合谋欲杀害唐三藏，并偷走了月光宝盒，此举使观音萌生将其铲除心思，经唐三藏请求，孙悟空被判五百年后重新投胎做人赎其罪孽...."
+            }
+            let newPara = { name, year, director, star, type, introduction } = { ...deParam, ...param }
+            intro.innerHTML =
+                ` <h1>名称：${newPara.name}</h1>
+              <div>导演：${newPara.director}</div>
+              <div>主演：${newPara.star}</div>
+              <div>类型：${newPara.type}</div>
+              <div>上映年份：${newPara.year}</div>
+              <div>简介：${newPara.introduction}</div>
+            `
+            console.log(newPara);
+        }
+
+        getInfo();
+        btn.onclick = function () {
+            getInfo(param1);
+        }
+
+
+        /* 默认值参考设置
+          {
+                name: "大话西游之月光宝盒 ",
+                year: "2014",
+                director: "刘镇伟",
+                star: "周星驰 / 吴孟达 / 罗家英",
+                type: "喜剧 / 爱情 / 奇幻 / 古装",
+                introduction: "　孙悟空（周星驰）护送唐三藏（罗家英）去西天取经路上，与牛魔王合谋欲杀害唐三藏，并偷走了月光宝盒，此举使观音萌生将其铲除心思，经唐三藏请求，孙悟空被判五百年后重新投胎做人赎其罪孽...."
+            }
+        */
+		// 在此补全代码
+    </script>
+</body>
+
+</html>

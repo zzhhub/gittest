@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         // console.log({...{}});
@@ -47,22 +49,44 @@
         // user({})
         // user()
 
-        // const user = userparam =>{
-        //     const defaultParam = {
-        //         username:"lucy",
-        //         age:0,
-        //         sex:"male"
-        //     }    
-        //     // console.log({...defaultParam,...userparam})
+        const user = userparam => {
+            const defaultParam = {
+                username: "lucy",
+                age: 0,
+                sex: "male"
+            }
+            // console.log({...defaultParam,...userparam})
 
-        //     // const param = {...defaultParam,...userparam}    
-        //     const {username,age,sex} = {...defaultParam,...userparam}    
-        
-        //     // console.log(param.username)
-        //     console.log(username,age,sex);
-        // }
+            // const param = {...defaultParam,...userparam}    
+            const { username, age, sex } = { ...defaultParam, ...userparam }
+
+            // console.log(param.username)
+            console.log(username, age, sex);
+        }
         // user();
-        console.log();
+        // const userparam1 = {
+        //     username: "LILI",
+        //     age: 18,
+        //     sex: "female"
+        // }
+        // user(userparam1);
+
+        // user({
+        //     username: "miky",
+        //     age: 8,
+        //     sex: "female"
+        // })
+        // user(username = "lucky",
+        //     age = 1,
+        //     sex = "female")//默认
+        // user("Amy",1,"female")//默认
+        // user(["Mike",9,"male"])//默认
+        // console.log();
+
+        console.log(...[1,2,3]);
+
+        console.log({...{name:"Cidy",age:18}});
     </script>
 </body>
+
 </html>

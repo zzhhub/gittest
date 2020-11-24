@@ -71,7 +71,19 @@
 
         // console.log(a)
         // console.log(c)
-        
+
+        /**
+         * 地址栏-截取指定字符前的内容
+         * @param url 路径
+         * @param parameter 字符
+         */
+        function getCaption(url, parameter) {            
+            var index = url.indexOf(parameter);
+            url = url.substring(0,index);
+            return url;
+        }
+
+        getCaption(window.location.href,"?")
     </script>
 </body>
 
