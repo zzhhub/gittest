@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <script>
+        // "use strict"
+        // 键值对 key:value
+        // const p = {
+        //     name:"mike",
+        //     age:19,
+        //     job:"worker"
+        // }
+        // console.log(p);
+
+        // const m = new Map();
+        // m.set("sex","male").set("name","lucy")
+        // console.log(m)
+        // console.log({...m});
+        // console.log(m.get("sex"))
+        // console.log(m.get("true"))
+        // console.log(m.get(true))
+        // console.log(m.has("name"))
+        // m.delete("sex")
+        // console.log(m)
+
+        // m.clear();
+        // console.log(m)
+
+        // m.forEach(function (value,key,map) {
+        //     console.log(value,key,map);
+        //     console.log(this);
+        // },document)
+
+        // m.forEach( (value,key,map) => {
+        //     console.log(value,key,map);
+        //     console.log(this);
+        // },document)
+
+        // 1、创建Map实例
+
+        // 2、使用set方法，向实例中添加name、sex、age
+
+        // 3、使用delete方法，删除实例中的age
+
+        // 4、使用has方法，判断某个值是否为Map实例的成员
+
+        // let m = new Map();
+        // console.log(m);
+
+        // m.set("name","Lily").set("sex","male").set("age",19)
+        // console.log(m);
+
+        // m.delete("age")
+        // console.log(m);
+
+        // console.log(m.has("sex"))
+
+        // 应用
+        // const n = new Map([
+        //     ["name","miky"],
+        //     ["age",18]
+        // ])
+        // console.log(n);
+
+        //     const n = new Set([
+        //         ["name","miky"],
+        //         ["age",18]
+        //     ])
+        //     console.log(new Map(n));
+        //     console.log(new Map(n) === new Map(n));
+
+        // 1、创建一个Map实例，并把二维数组[['a', 111], ['b', 222]]作为参数，传入该实例中
+
+        // 2、再创建一个Map实例，把第一个Map实例作为参数，传入该实例中
+
+        // 3、在第二个Map实例中，新添加一个' 键为“c” 、值为333的成员，并在控制台中输出第二个Map实例
+
+        // const s = new Set([
+        //     ['a',111],
+        //     ['b',222]
+        // ])
+        // let m = new Map(s)
+        // // console.log(m);
+
+        // let k = new Map(m)
+        // // console.log(k);
+
+        // k.set("c",333)
+        // console.log(k);
+
+        // console.log(NaN === NaN);
+        
+        // Map 与 Set NaN是相等的  覆盖前面的值
+
+        // let m = new Map()
+        // console.log(m.set("NaN",1).set("NaN",2));
+
+        // Map的应用
+        // const [p1,p2,p3] = document.querySelectorAll("p")
+        // console.log(p1,p2,p3);
+
+        // const m = new Map([
+        //     [p1,"red"],
+        //     [p2,"orange"],
+        //     [p3,"blue"],
+        // ])
+        // console.log(m);
+
+        // m.forEach((color,ele)=>{
+        //     ele.style.color = color
+        // })
+
+
+        const [p1,p2,p3] = document.querySelectorAll("p")
+        console.log(p1,p2,p3);
+
+        const m = new Map([
+            [p1,{
+                color:"red",
+                fontSize:"14px",
+                backgroundColor:"#ccc"
+            }],
+            [p2,{
+                color:"orange",
+                fontSize:"14px",
+                backgroundColor:"#aaa"
+            }],
+            [p3,{
+                color:"blue",
+                fontSize:"14px",
+                backgroundColor:"#bbb"
+            }],
+        ])
+        console.log(m);
+
+        m.forEach((proItem,ele)=>{
+            for(let p in proItem){
+                ele.style[p] = proItem[p]
+                console.log(ele.style[p],proItem[p]);
+            }
+        })
+
+    </script>
+</body>
+
+</html>
