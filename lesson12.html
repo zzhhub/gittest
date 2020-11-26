@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        // Iterator  是一个过程： 【类似：遍历器】== 可遍历的对象生成的方法  -> 可遍历的对象 -> 对象.next()方法 -> done:true 的这整个过程
+        // for
+        // forEach
+        // console.log(Iterator);
+        // const m = [1,2][Symbol.iterator]();
+        // console.log(m.next()); //{value: 1, done: false}
+        // console.log(m.next()); //{value: 2, done: false}
+        // console.log(m.next()); //{value: undefined, done: true}
+
+        // 为什么需要Iterator
+        // 数组： for  / forEach
+        // 对象： for in
+
+
+
+        // 如何方便使用Iterator
+        // 
+        // Symbol.iterator it next
+        // for of
+        // for ... of用法
+        // break continue
+        // 索引
+
+        // const arr = [1,2,3]
+        // for (let i of arr) {
+        //     if(i === 2)
+        //     // break; //1
+        //     continue; //2
+        //     console.log(i);
+        // }
+
+        // for...of 循环遍历出 done 为false 对应的value值
+
+
+        // for...of取值索引
+        // const arr = [1,2,3]
+        // console.log(arr.keys());
+
+        // const arr = [1,2,3]
+        // for (let i of arr.keys()) {
+        //     // if(i === 2)
+        //     // break; //1
+        //     // continue; //2
+        //     console.log(i);
+        // }
+        // const arr = [1,2,3]
+        // for (let i of arr.values()) {
+        //     // if(i === 2)
+        //     // break; //1
+        //     // continue; //2
+        //     console.log(i);
+        // }
+
+        // const arr = [1,2,3]
+        // for (let i of arr.entries()) {
+        //     console.log(i);//[0,1],[1,2],[2,3]
+        // }
+
+        // const arr = [1,2,3]
+        // for (let [index,value] of arr.entries()) {
+        //     console.log(index,value);
+        // }
+
+        // （1）使用for…of遍历数组arr。
+
+        // （2）通过entries方法对数组的键名和键值进行遍历。
+
+        // （3）结合数组解构赋值获取到索引和值。
+
+        // （4）判断值等于o时，将其转成大写字母O，然后重新赋值给数组所在项。
+
+        // 1、转大写字母可以使用toUpperCase方法
+
+        // 2、结合break关键字退出循环，只针对第一个出现的字母转成大写。
+
+        // 在本地编辑器测试效果
+
+        // const arr = ["i", "m", "o", "o", "c"]
+        // //    在此补充代码
+        // console.log(arr)
+
+        // for (let [index,value] of arr.entries()) {
+        //     if(value === 'o'){
+        //         arr[index] = value.toUpperCase();
+        //         break;
+        //     }
+        //     console.log(index,value);
+        // }
+        // console.log(arr);
+
+        // 原生可遍历的有哪些
+        // 数组 字符串  Set Map arguments NodeList Symbol.iterator有该方法的 
+
+
+        // （1）给对象obj添加Symbol.iterator方法。
+
+        // （2）Symbol.iterator方法内部定义变量表示遍历次数，并返回一个对象。
+
+        // （3）返回的对象中设置next方法。
+
+        // （4）在next方法中通过判断设置对应的返回值。
+
+        // 键名为字符串类型的数字，可以通过中括号语法访问，示例：obj['0']
+
+        // const obj = {
+        //     "0": "xm",
+        //     "sex": "male",
+        //     length: 2
+        // }
+
+        // // 在此补充代码
+        // obj[Symbol.iterator] = () => {
+        //     let index = 0;
+        //     return {
+        //         next() {
+        //             index++;
+        //             if (index === 1) {
+        //                 return {
+        //                     value: obj['0'],
+        //                     done: false
+        //                 }
+        //             }
+        //             else if (index === 2) {
+        //                 return {
+        //                     value: obj["sex"],
+        //                     done: false
+        //                 }
+        //             }
+        //             else {
+        //                 return {
+        //                     value: undefined,
+        //                     done: true
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        // for (const index of obj) {
+        //     console.log(index);
+        // }
+
+        // （1）首先将原生可遍历对象，在数组中使用数组展开运算符进行展开。
+        // （2）然后通过解构赋值对展开的数组进行匹配。
+        // （3）最后测试输出结果。
+                
+        // Nodelist对象
+        const list = document.querySelectorAll('li')
+
+        const [p1,p2,p3] = [...list]
+        console.log(p1,p2,p3);
+
+        // Map对象
+        const map = new Map([
+            ['a', 1],
+            ['b', 2]
+        ])
+
+        const [a1,a2] = [...map]
+        console.log(a1,a2);
+
+        // 在此补充代码
+        const fn = function() {
+            // arguments对象
+            // 在此补充代码 
+            const [m,n] = [...arguments]           
+            console.log(m,n);
+        }
+
+        fn(1, 3)
+
+    </script>
+</body>
+
+</html>
