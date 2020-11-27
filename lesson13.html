@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- ES6新增方法 -->
+    <script>
+        // const s = " s d s "
+        // console.log(s.includes("d"));
+        // console.log(s.trimEnd());
+
+        // const obj = {
+        //     name : "alho",
+        //     age : 18
+        // }
+
+        // console.log(obj);
+        // console.log(Array.from(obj));
+
+        // console.log(new Set(["s","ds","s","a"]));
+
+
+        // 3.应用
+        // let url = 'https://www.imooc.com/course/list?';
+        // let url1 ='https://www.imooc.com/course/list?username=xm';
+        // let url2 ='https://www.imooc.com/course/list?username=xm&';
+
+        // const addURLParam = (url, name, value) => {
+        //     // 在此补充代码
+        //     const str = url.substr(url.length-1,1);
+        //     console.log(str);
+        //     if(url.includes("?")){
+        //         if(str.includes("&") || str.includes("?")){
+        //             url += ''
+        //         }
+        //         else{
+        //             url += '&'
+        //         }
+        //     }            
+        //     else{
+        //         url += "?"
+        //     }
+        //     url += `${name}=${value}`;
+        //     return url;
+        // };
+        // url = addURLParam(url, 'password', 'admin');
+        // url1 =  addURLParam(url1, 'password', 'admin');
+        // url2 =  addURLParam(url2, 'password', 'admin');
+        // document.write(url,'<br>');
+        // document.write(url1,'<br>');
+        // document.write(url2,'<br>');
+
+        // const m = new Map([
+        //     ['apple', '10'],
+        //     ['strawberry', '5'],
+        //     ['Banana', '0']
+        // ])
+
+        // for (let [index, value] of m) {
+        //     index = index.padEnd(21, " -")
+        //     value = value.padStart(3, "0")
+        //     console.log(`${index} Count: ${value}`);
+        // }
+
+        // var str ='  imooc  ';
+        // // 添加代码
+
+        // console.log(str.trimStart().trimEnd());
+
+        //  数组
+        // console.log([1,2,3].includes(1));
+
+        // console.log(Array.from(new Set([1,2,3,4,5,2,4])));//[1,2,3,4,5]
+        // console.log([...new Set([1,2,3,4,5,2,4])]);//[1,2,3,4,5]
+        // console.log(new Set([1,2,3,4,5,2,4])); //{1,2,3,4,5}
+
+        // 拥有length的任意对象
+        // const obj = {
+        //     name:"lily",
+        //     age:18,
+        //     '0':"A",
+        //     length:3
+        // }
+        // console.log(Array.from(obj)); ["a","undefined","undefined"]
+        // console.log([...obj]); //报错
+
+        // console.log([1, 2, 3, 4, 5].find((value, index, arr) => { return value > 3 }));//4
+        // console.log([1, 2, 3, 4, 5].findIndex((value, index, arr) => { return value > 3 }));//3
+
+
+        let data = [
+            {
+                age: 12,
+                name: "张三"
+            },
+            {
+                age: 20,
+                name: "李四"
+            }
+        ]
+    /*补充代码*/
+    // 1. 使用find()方法，找到数据data中，age为20的数据，并将其打印到控制台
+
+
+// 2. 使用findIndex()方法，为name为“李四”的数据，添加一个hobby属性，属性值为“游泳”
+
+
+    // console.log(data.find(value=> {
+    //     if(value.age == 20){
+    //         return value
+    //     }
+    // }));
+
+    // let obj = data.findIndex(value=> {
+    //     if(value.name == '李四'){
+    //         return value
+    //     }
+    // })
+
+    // data[obj].bobby = '游泳'
+    // console.log(data[obj]);
+
+    // 合并对象
+    // const apple ={
+    //     color:"red",
+    //     shape:"圆形",
+    //     taste:"甜的",
+    //     use:"eat"
+    // }
+    // const pear ={
+    //     color:"yellow",
+    //     shape:"椭圆形",
+    //     taste:"甜的"
+    // }
+
+    // console.log(Object.assign({},apple,pear));
+    // console.log(apple);
+    // console.log(pear);
+    // console.log({...apple,...pear});
+
+    // const logUser = userOptions =>{
+    //     const DEFAULTS ={
+    //         username : "Zhangsan",
+    //         age:0
+    //     }
+        
+    //     let options = Object.assign({},DEFAULTS,userOptions)
+    //     console.log(options);
+    // }
+
+
+    // logUser();
+    // logUser({})
+    // logUser({username:"HOHO"})
+
+    // 对象  构造函数方法      返回的是数组
+    // 数组  实例方法      返回的是interator   可遍历的对象
+    Object.keys()
+    Object.values()
+    Object.entries()
+
+    </script>
+</body>
+
+</html>
