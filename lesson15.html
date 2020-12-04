@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+
+<body>
+    <!-- Class 属性及方法 继承 应用 -->
+    <script>
+        // class Person {
+        //     // 构造方法  定义属性
+        //     constructor(name, age, job="老师") {
+        //         this.name = name
+        //         this.age = age
+        //         this.job = job
+        //     }
+        //     // 实例对象共享方法
+        //     speak(){
+        //         return "说话"
+        //     }
+        // }
+
+        // const p = new Person("haha",13)
+        // console.log(p);
+        // console.log(Person.prototype.speak);
+        // console.log(p.speak());
+
+
+        // function User(name,age,job) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.job = job
+        // }
+        // User.prototype.speak = function(){
+        //     return "说话"
+        // }
+
+        // 声明形式
+        // 最上方
+
+        // 表达式形式-class
+        // const Person = class{
+        //     constructor(name){
+        //         this.name = name
+        //         console.log("constructor");
+        //     }
+        //     speak(){
+
+        //     }
+        // }
+
+        // new Person()
+
+        // (function () {
+        //     console.log("雅儿");
+        // })()
+
+        // function();
+
+        // 立即执行类
+        // new (class {
+        //     constructor(name) {
+        //         this.name = name
+        //         console.log("constructor");
+        //     }
+        //     speak() {
+
+        //     }
+        // })()
+        // new Person()
+
+        // class Person{
+        //     // 实例属性
+        //     age = 18
+        //     name = "Lily"
+        //     // 实例方法
+        //     getName = function () {
+        //         return this.name
+        //     }
+        //     constructor(name,age){
+        //         this.name = name
+        //         this.age = age
+        //     }
+        //     // 实例方法
+        //     speak(){
+        //         return "说话"
+        //     }
+
+        // }
+        // const p = new Person("慕课",10)
+        // console.log(p.speak(),p.name,p.age,"getName:"+p.getName());
+
+        // // 静态方法   类的方法
+        // class Person{
+        //     // 实例属性
+        //     age = 18
+        //     name = "Lily"
+        //     // 实例方法
+        //     getName = function () {
+        //         return this.name
+        //     }
+        //     constructor(name,age){
+        //         this.name = name
+        //         this.age = age
+        //     }
+        //     // 实例方法  必须new个实例
+        //     speak(){
+        //         console.log(this);
+        //         return "说话"
+        //     }
+        //     // 静态方法  在类中可直接调用
+        //     static speak(){
+        //         console.log(this);
+        //         return "静态说话"
+        //     }
+
+        // }
+
+        //不方便封装
+        // Person.say = function(){
+        //         console.log(this);
+        //         return "类静态说话"
+        // }
+        // const p = new Person("慕课",10)
+        // // console.log(p.speak(),p.name,p.age,"getName:"+p.getName());
+        // console.log(p.speak());
+        // console.log(Person.speak());
+        // console.log(Person.say());
+
+        // 静态属性   类的属性
+        // class Person {
+        //     constructor(name, age) {
+        //         this.name = name
+        //         this.age = age
+        //     }
+        //     speak() {
+        //         console.log(this);
+        //         return "说话"
+        //     }
+        //     // 类属性写法  参考静态方法
+        //     static getVersion(){
+        //         return "v1.0"
+        //     }
+        //     // static version = "v1.0"//浏览器兼容不好
+
+        // }
+        // Person.say = function () {
+        //     console.log(this);
+        //     return "类静态说话"
+        // }
+        // // Person.version = "v1.0"  //不方便封装
+
+        // const p = new Person("慕课", 10)
+        // // console.log(Person.version);
+        // console.log(Person.getVersion());
+
+        // （1）将Person函数声明方式换成class声明方式。
+
+        // （2）Person内使用this声明的属性和方法，在class的constructor方法中声明。
+
+        // （3）Person.prototype上的方法，在class内直接声明就可以了不用放在constructor中。
+
+        // （4）Person函数上的属性和方法，在class中使用static关键字声明为静态属性和方法。
+
+
+
+        // function Person(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.say = function () {
+        //         alert(this.name, this.age)
+        //     }
+        // }
+        // Person.prototype.say = function () {
+        //     console.log("say")
+        // }
+        // Person.intro = "this is a Person class"
+        // Person.show = function () {
+        //     console.log('show')
+        // }
+
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+                this.say = function () {
+                    alert(this.name + " " + this.age)
+                }
+            }
+
+            say() {
+                console.log("say")
+            }
+
+            // static intro = function () {
+            //     return "this is a Person class"
+            // }
+
+            static intro = "this is a Person class"
+            static show = function () {
+                console.log('show')
+            }
+
+        }
+        const p = new Person("Li", 18)
+        p.say();
+        // Person.show()
+        // console.log(Person.intro());
+        // console.log(Person.intro);
+        Person.prototype.say()
+
+    </script>
+</body>
+
+</html>
