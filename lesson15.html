@@ -182,36 +182,177 @@
         //     console.log('show')
         // }
 
+        // class Person {
+        //     constructor(name, age) {
+        //         this.name = name;
+        //         this.age = age;
+        //         this.say = function () {
+        //             alert(this.name + " " + this.age)
+        //         }
+        //     }
+
+        //     say() {
+        //         console.log("say")
+        //     }
+
+        // static intro = function () {
+        //     return "this is a Person class"
+        // }
+
+        //     static intro = "this is a Person class"
+        //     static show = function () {
+        //         console.log('show')
+        //     }
+
+        // }
+        // const p = new Person("Li", 18)
+        // p.say();
+        // Person.show()
+        // console.log(Person.intro());
+        // console.log(Person.intro);
+        // Person.prototype.say()
+
+
+        // class Person {
+        //     constructor(name) {
+        //         this.name = name
+        //         console.log(this);
+        //     }
+
+        //     speak() {
+        //         console.log("say");
+        //     }
+
+        //     getName() {
+        //         return this.name;
+        //     }
+        // }
+        // const p = new Person("米妮")
+        // p.speak()
+        // console.log(p.name);
+        // console.log(p);
+        // console.log(typeof(Person));
+        // console.log(p.getName());
+
+        // 私有
+        // class Person {
+        //     constructor(name) {
+        //         this._name = name
+        //     }
+
+        //     speak() {
+        //         console.log("say");
+        //     }
+
+        //     getName() {
+        //         return this._name;
+        //     }
+        // }
+        // const p = new Person("米妮")
+        // console.log(p.name);
+        // console.log(p.getName());
+
+        // {
+        //     let name = "";
+        //     class Person {
+        //         constructor(uname) {
+        //             name = uname
+        //         }
+
+        //         speak() {
+        //             console.log("say");
+        //         }
+
+        //         getName() {
+        //             return name;
+        //         }
+        //     }
+        //     window.Person = Person
+        // }
+
+        // const p = new Person("米妮")
+        // console.log(p.name);
+        // console.log(p.getName());
+
+        // 继承 extends
+        // class Person {
+        //     constructor(name, age) {
+        //         this.name = name;
+        //         this.age = age;
+        //         this.say = function() {
+        //             alert(this.name + " " + this.age)
+        //         }
+        //     }
+
+        //     say() {
+        //         console.log("say")
+        //     }
+
+        //     static intro = "this is a Person class"
+        //     static show = function() {
+        //         console.log('show')
+        //     }
+        // }
+
+        // class Child extends Person {
+        //     constructor(name, age) {
+        //         super(name, age)
+        //     }
+        // }
+
+        // const c = new Child("小车", 19);
+        // console.log(c.name);
+        // c.say()
+        // console.log(Child.intro);
+        // Child.show()
+
+        // 继承改写
         class Person {
             constructor(name, age) {
                 this.name = name;
                 this.age = age;
-                this.say = function () {
+                this.say = function() {
                     alert(this.name + " " + this.age)
                 }
             }
-
-            say() {
-                console.log("say")
+            speak() {
+                console.log("speak")
             }
-
-            // static intro = function () {
-            //     return "this is a Person class"
-            // }
 
             static intro = "this is a Person class"
-            static show = function () {
+            static show = function() {
                 console.log('show')
             }
-
         }
-        const p = new Person("Li", 18)
-        p.say();
-        // Person.show()
-        // console.log(Person.intro());
-        // console.log(Person.intro);
-        Person.prototype.say()
 
+        class Child extends Person {
+            constructor(name, age) {
+                super(name, age)
+            }
+
+            // 同名覆盖
+            speak() {
+                console.log("Child speak")
+            }
+        }
+
+        const c = new Child("小车", 19);
+        c.speak()
+
+        // super 作为函数使用
+        // 代表父类的构造方法，只能用在子类的构造方法中 用在其他地方报错
+        // super 虽然代表父类的构造方法，但 内部的 this 指向当前的子类实例
+
+        // super作为对象使用
+
+        // 1.在子类的  构造方法中/一般方法中 使用
+        // super 代表  父类的原型对象  Person.prototype
+        // 定义在 父类实例 上的属性和方法（this.形式的） 无法通过super调用到
+        // 通过super 调用父类的方法时，方法内的 this 指向当前的子类实例
+
+        // 2.在子类的  静态方法中 使用
+        // super 指向 父类（class）
+        // 通过 super 调用父类的方法 方法内部的 this 指向当前的子类  不是子类实例
     </script>
 </body>
 
