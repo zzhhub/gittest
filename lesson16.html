@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+    <link rel="stylesheet" href="./slider.css" />
+</head>
+
+<body>
+    <div class="slider-layout">
+        <div class="slider">
+            <div class="slider-content">
+                <div class="slider-item">
+                    <a href="javascript:;"><img src="./imgs/1.jpg" alt="1" class="slider-img" /></a>
+                </div>
+                <div class="slider-item">
+                    <a href="javascript:;"><img src="./imgs/2.jpg" alt="1" class="slider-img" /></a>
+                </div>
+                <div class="slider-item">
+                    <a href="javascript:;"><img src="./imgs/3.jpg" alt="1" class="slider-img" /></a>
+                </div>
+                <div class="slider-item">
+                    <a href="javascript:;"><img src="./imgs/4.jpg" alt="1" class="slider-img" /></a>
+                </div>
+            </div>
+        </div>
+        <div class="arrow-btn left"></div>
+        <div class="arrow-btn right"></div>
+    </div>
+
+    <script src="./base.js"></script>
+    <script>
+        // console.log(BaseSlider);
+        class Slider extends BaseSlider {
+            constructor(el, options, leftbtn, rightbtn) {
+                    super(el, options);
+                    this._bindEvent();
+                    this.btnleftMove(leftbtn)
+                    this.btnrightMove(rightbtn)
+                    this.toggleShow(el, leftbtn, rightbtn)
+                }
+                // 事件绑定
+            _bindEvent() {
+                document.addEventListener("keyup", ev => {
+                    // 左键
+                    if (ev.keyCode === 37) {
+                        this.prev()
+                    }
+                    // 右键
+                    if (ev.keyCode === 39) {
+                        this.next()
+                    }
+                })
+            }
+
+            btnleftMove(ele) {
+                ele.addEventListener("click", () => {
+                    this.prev()
+                })
+            }
+            btnrightMove(ele) {
+                ele.addEventListener("click", () => {
+                    this.next()
+                })
+            }
+            toggleShow(el, leftbtn, rightbtn) {
+                el.addEventListener("mouseover", () => {
+                    leftbtn.style.display = "block"
+                    rightbtn.style.display = "block"
+                })
+                el.addEventListener("mouseleave", () => {
+                        leftbtn.style.display = "none"
+                        rightbtn.style.display = "none"
+                    })
+                    // 解决按钮闪烁问题
+                leftbtn.addEventListener("mouseenter", () => {
+                    leftbtn.style.display = "block"
+                    rightbtn.style.display = "block"
+                })
+                rightbtn.addEventListener("mouseenter", () => {
+                    leftbtn.style.display = "block"
+                    rightbtn.style.display = "block"
+                })
+            }
+
+        }
+        const el = document.querySelector(".slider")
+        const leftbtn = document.querySelector(".left")
+        const rightbtn = document.querySelector(".right")
+
+        const s = new Slider(el, {
+                // 初始索引
+                initialIndex: 1,
+                // 切换时是否有动画
+                animation: true,
+                // 切换速度，单位 ms
+                speed: 2000
+            }, leftbtn, rightbtn)
+            // s._bindEvent();
+            // s.btnleftMove(leftbtn)
+            // s.btnrightMove(rightbtn)
+            // s.toggleShow(el, leftbtn, rightbtn)
+    </script>
+</body>
+
+</html>
