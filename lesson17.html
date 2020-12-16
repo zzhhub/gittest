@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+    <link rel="stylesheet" href="./css/slider.css" />
+</head>
+
+<body>
+    <!-- 模块--一个个作用域的代码块 -->
+    <!-- 模块系统--解决了：模块化问题 消除全局变量 管理加载顺序 -->
+
+    <!-- 安装 live server 插件   搭建本地环境的服务器    module 必须借助服务器，看到效果。http://-->
+
+    <div class="slider-layout">
+        <div class="slider">
+            <div class="slider-content">
+                <div class="slider-item">
+                    <a href="javascript:;"><img src="./imgs/1.jpg" alt="1" class="slider-img" /></a>
+                </div>
+                <div class="slider-item">
+                    <a href="javascript:;"><img src="./imgs/2.jpg" alt="1" class="slider-img" /></a>
+                </div>
+                <div class="slider-item">
+                    <a href="javascript:;"><img src="./imgs/3.jpg" alt="1" class="slider-img" /></a>
+                </div>
+                <div class="slider-item">
+                    <a href="javascript:;"><img src="./imgs/4.jpg" alt="1" class="slider-img" /></a>
+                </div>
+            </div>
+        </div>
+        <div class="arrow-btn left"></div>
+        <div class="arrow-btn right"></div>
+    </div>
+    <!-- type="module"的形式 引入js文件 -->
+    <!-- 用到 import export  就用到了 type="module"的script引入 -->
+    <script src="./js/lesson17.js" type="module"></script>
+
+</body>
+
+</html>
