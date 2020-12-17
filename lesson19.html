@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 任务: (步骤)
+
+    （1）先创建一个base.js文件，定义一个加法函数，之后将函数导出。
+    
+    （2）再创建一个data.js文件，定义两个变量num1、num2并赋值，之后将两个变量导出。
+    
+    （3）最后，在html文件中导入base.js和data.js模块，调用函数，并将num1和num2作为参数传入函数中。 -->
+
+    <script type="module">
+        import {add} from './js/base19.js'; import {num1,num2} from './js/data19.js'; document.title = add(num1,num2);
+    </script>
+</body>
+
+</html>

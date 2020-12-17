@@ -50,26 +50,32 @@
         // user()
 
         const user = userparam => {
-            const defaultParam = {
-                username: "lucy",
-                age: 0,
-                sex: "male"
+                const defaultParam = {
+                        username: "lucy",
+                        age: 0,
+                        sex: "male"
+                    }
+                    // console.log({...defaultParam,...userparam})
+
+                // const param = {...defaultParam,...userparam}    
+                const {
+                    username,
+                    age,
+                    sex
+                } = {...defaultParam,
+                    ...userparam
+                }
+
+                // console.log(param.username)
+                console.log(username, age, sex);
             }
-            // console.log({...defaultParam,...userparam})
-
-            // const param = {...defaultParam,...userparam}    
-            const { username, age, sex } = { ...defaultParam, ...userparam }
-
-            // console.log(param.username)
-            console.log(username, age, sex);
-        }
-        // user();
-        // const userparam1 = {
-        //     username: "LILI",
-        //     age: 18,
-        //     sex: "female"
-        // }
-        // user(userparam1);
+            // user();
+            // const userparam1 = {
+            //     username: "LILI",
+            //     age: 18,
+            //     sex: "female"
+            // }
+            // user(userparam1);
 
         // user({
         //     username: "miky",
@@ -83,9 +89,13 @@
         // user(["Mike",9,"male"])//默认
         // console.log();
 
-        console.log(...[1,2,3]);
+        console.log(...[1, 2, 3]);
 
-        console.log({...{name:"Cidy",age:18}});
+        console.log({... {
+                name: "Cidy",
+                age: 18
+            }
+        });
     </script>
 </body>
 
