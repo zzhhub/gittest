@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: "development",
@@ -21,10 +22,19 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader'
-        }, ]
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader'
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                // loader: 'css-loader'
+                // use: ['style-loader', 'css-loader']
+                use: [MiniCssExtractPlugin.loader, 'css-loader']
+
+            }
+        ]
     },
     plugins: [
         // 单入口
@@ -56,6 +66,9 @@ module.exports = {
             template: './search.html', //模板文件
             filename: 'search.html', //生成文件名
             chunks: ['search'] //指定js入口引入
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].css'
         })
     ]
 };
