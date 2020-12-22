@@ -12,4 +12,3 @@ new Promise((resolve, reject) => {
 });
 Array.from([1, 2]);
 class Person {}
-import './index.js';
