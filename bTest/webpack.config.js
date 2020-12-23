@@ -18,21 +18,42 @@ module.exports = {
     // }
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js'
+        filename: 'js/[name].js'
     },
     module: {
         rules: [{
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                loader: 'babel-loader' //ES6语法处理
             },
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
                 // loader: 'css-loader'
-                // use: ['style-loader', 'css-loader']
-                use: [MiniCssExtractPlugin.loader, 'css-loader']
+                // use: ['style-loader', 'css-loader']//css头部链接引入
+                // use: [MiniCssExtractPlugin.loader, 'css-loader']//css文件外链引入
+                use: [{
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        publicPath: '../' //设置好公用路径（根）
+                    }
+                }, 'css-loader']
 
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                // loader:'file-loader',
+                use: [{
+                    loader: 'file-loader', //处理css中 本地图片调用
+                    options: {
+                        name: 'images/[name].[ext]',
+                        esModule: false //html-withimg-loader 按照ES6语法解析  这里禁用ES6的语法解析
+                    }
+                }]
+            },
+            {
+                test: /\.(htm|html)$/,
+                loader: 'html-withimg-loader' //处理 html中 本地图片调用
             }
         ]
     },
@@ -69,6 +90,7 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].css'
-        })
+        }),
+
     ]
 };
