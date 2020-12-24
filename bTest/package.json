@@ -17,12 +17,14 @@
         "mini-css-extract-plugin": "^0.9.0",
         "style-loader": "^1.2.1",
         "webpack": "^4.44.1",
-        "webpack-cli": "^3.3.12"
+        "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "^3.11.0"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "babel src -d dist",
-        "webpack": "webpack --config webpack.config.js"
+        "webpack": "webpack --config webpack.config.js",
+        "dev": "webpack-dev-server --open chrome"
     },
     "author": "",
     "license": "ISC"
