@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <link rel="stylesheet" href="">
+    <img src="" alt="" srcset="">
+    <iframe src="" frameborder="0">iframe</iframe>
+    <script src=""></script>
+    <a href="http://"></a>
+    <a href="tel:+ 8618551761655">电话</a>
+    <a href="mailto:864366334@qq.com">邮箱</a> -->
+
+    <!-- 
+        请求状态：
+        100-199：请求被接受 需要继续处理
+        200-299：请求成功
+        300-399：重定向 301  永久重定向  302 暂时重定向  304 未修改
+        400-499：请求错误 404 未找到
+        500-599：服务器错误 500  内部错误
+     -->
+
+    <!-- http报文 = 请求头（起始行+首部） + 请求体（post） -->
+    <!-- http报文 = 响应头（起始行+首部） + 响应体 -->
+
+    <!-- 本地存储 -->
+    <!-- Cookie -->
+    <!-- localStorage -->
+
+    <script>
+        // document.cookie = 'username=alex'
+        // 字符编码
+        // document.cookie = `username=${encodeURIComponent('李磊')}`
+        // expires===过期时间
+        // document.cookie = `username=alex; expires=${new Date('2022-09-09 23:59:59')}`
+        // max-age===过期时间
+        // document.cookie = 'username=alex; max-age=3'
+        // document.cookie = 'username=alex; max-age=259200'
+
+        // domain限制cookie访问范围 只能当前域和父域   无法读取其他域(不同域名)
+        // document.cookie = 'username=alex; domain=www.imooc.com'
+        // document.cookie = 'username=alex; domain=.imooc.com'
+
+        // 设置  httponly   不能通过js访问
+        // 设置  secure   只能https访问才会添加进 request headers cookie
+        // path (不同域名)
+    </script>
+
+</body>
+
+</html>
