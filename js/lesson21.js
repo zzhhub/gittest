@@ -16,7 +16,7 @@
 // show(remove("name"))
 // show(remove("用户名"))
 
-// localStorage
+// localStorage（本地存储永久存在，除非手动清除）
 localStorage.setItem("name", "lili")
 localStorage.setItem("age", 18)
 
@@ -31,3 +31,6 @@ console.log(localStorage.key("age") === 'age');
 
 localStorage.clear()
 console.log(localStorage);
+
+// sessionStorage(会话结束就被清除)
+sessionStorage
