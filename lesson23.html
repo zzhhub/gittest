@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-6 自由编程</title>
+</head>
+
+<body>
+    <button id="button1" type="button">按钮</button>
+
+    <!-- <script>
+        const url = 'https://www.imooc.com/api/http/json/search/suggest?words=js';
+
+        document.getElementById("button1").addEventListener("click", () => {
+            jsonPost(url);
+        }, false)
+
+        function jsonPost(url) {
+
+            // 创建对象 
+            const xhr = new XMLHttpRequest();
+
+            // 监听事件 
+            xhr.addEventListener("load", () => {
+                if (xhr.readyState !== 4)
+                    return;
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                    console.log(xhr.responseText);
+                } else {
+                    console.log("异常");
+                }
+            });
+
+            // 准备发送请求 
+            xhr.open("post", url, true);
+
+            // 设置请求头信息
+            xhr.setRequestHeader('Content-Type', 'application/json')
+
+            // 真正发送请求 send()通过请求体发送data 必须POST GET的请求方式，请不传，或者传递null. 
+            xhr.send(JSON.stringify({
+                username: 'imooc'
+            }));
+        }
+    </script> -->
+
+    <script>
+        const url = `https://www.imooc.com/api/http/search/suggest?words=${encodeURIComponent('前端')}`;
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState != 4) return;
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                console.log(xhr.responseText);
+            }
+        };
+        //在此补充代码
+        xhr.open("POST", url, true);
+        xhr.send(JSON.stringify({
+            user: `${encodeURIComponent('米粒')}`,
+            age: 19
+        }))
+    </script>
+</body>
+
+</html>

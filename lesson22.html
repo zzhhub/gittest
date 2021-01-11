@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookie封装</title>
+</head>
+
+<body>
+    <!-- 同域  跨域 -->
+    <!-- 协议           域名            端口号            路径        -->
+    <!-- http  ://www.youhuagong.com   :8080    /company/index.html -->
+
+    <!-- 路径可以不一致   其他3个有一个不同   即为跨域 -->
+
+    <!-- 浏览器的安全策略-同源策略 -->
+
+    <!-- 跨域资源共享 -->
+    <!-- 1.cores 跨域资源共享(老浏览器不支持)   服务端处理允许 response-header: Access-Control-Allow-Origin:*   IE10以上版本支持CORS
+         2.JSONP script   -->
+
+    <script>
+        // CORS 请求的处理过的API
+        // const url = 'https://www.imooc.com/api/http/search/suggest?words=js';
+        const url = './index.html';
+        // // 创建对象 
+        const xhr = new XMLHttpRequest();
+        // // 监听事件 
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState !== 4)
+                return;
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                console.log(xhr.responseText);
+            } else {
+                console.log("异常");
+            }
+        }
+
+        // // 准备发送请求 
+        xhr.open("post", url, true);
+
+        //设置  约定-服务器返回data格式
+        // xhr.responseText = '';
+        // xhr.responseText = 'text';
+        // xhr.responseText = 'json'; //服务端返回是标准json的形式,请求如此设置才是最优的。
+
+        // 设置请求超时时间
+        // xhr.timout = 10;
+
+        // 是否携带cookie
+        // xhr.withCredentials = true;
+
+        // 设置请求头信息
+        // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded') //post方式  告诉服务器，浏览器发送数据的默认数据格式
+        // xhr.setRequestHeader('Content-Type', 'application/json') //post方式  告诉服务器，浏览器发送数据的默认数据格式
+
+        // // 真正发送请求 send()通过请求体发送data 必须POST GET的请求方式，请不传，或者传递null. 
+        xhr.send(JSON.stringify({
+            user: 'mook',
+            age: 18
+        }));
+
+        // 终止请求-结束
+        // xhr.abort();
+
+        // JSONP
+        // 利用 script 标签  动态加载跨域文件
+        // const url = 'https://www.imooc.com/api/http/search/suggest?words=js';
+        // const script = document.createElement("script");
+        // script.src = url;
+        // document.body.appendChild(script);
+
+        // XHR 属性   responseText response (设置请求数据返回格式，IE10以上浏览器支持)  timeout(设置请求超时时间，IE8以上浏览器支持) withCredentials(AJAX请求  是否携带cookie。默认：同域携带cookie 跨域：不携带cookie。设置为true允许跨域。IE10开始支持)
+
+        // XHR 方法  abort();终止请求   setRequestHeader() 设置请求头信息
+
+        // // load 响应数据可用  IE9支持  
+        // xhr.addEventListener("load", () => {
+        //     console.log("load");
+        // })
+
+        // // error 请求发生错误 IE10支持
+        // xhr.addEventListener("error", () => {
+        //     console.log("error");
+        // })
+
+        // // abord 终止请求  IE10支持
+        // xhr.addEventListener("abord", () => {
+        //     console.log("abord");
+        // })
+
+        // // timeout 终止请求  IE8支持
+        // xhr.addEventListener("timeout", () => {
+        //     console.log("timeout");
+        // })
+    </script>
+</body>
+
+</html>

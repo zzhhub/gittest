@@ -8,91 +8,20 @@
 </head>
 
 <body>
-    <div></div>
-    <script>
-        // 创建对象
-        // const xhr = new XMLHttpRequest();
-
-        // // 准备发送请求
-        // xhr.open("方式", "地址", "是否异步");
-
-        // // 真正发送请求 send()通过请求体发送data 必须POST  GET的请求方式，请不传，或者传递null.
-        // xhr.send(data);
-
-        // // 监听事件
-        // xhr.onreadystatechange = () => {
-        //     if (xhr.readyState !== 4)
-        //         return;
-        //     if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
-        //         console.log(xhr.responseText);
-        //     } else {
-        //         console.log("异常");
-        //     }
-        // }
-
-        // get请求
-        // const url = "https://www.imooc.com/api/http/search/suggest?words=js"
-        // const xhr = new XMLHttpRequest();
-        // // 监听事件
-        // xhr.onreadystatechange = () => {
-        //     if (xhr.readyState !== 4)
-        //         return;
-        //     if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
-        //         console.log(xhr.responseText);
-        //     } else {
-        //         console.log("异常");
-        //     }
-        // }
-
-        // // 准备发送请求
-        // xhr.open('get', url, true);
-
-        // // 真正发送请求 send()通过请求体发送data 必须POST  GET的请求方式，请不传，或者传递null.
-        // xhr.send(null);
-
-        // encodeURIComponent
-        // const url = `https://www.imooc.com/api/http/search/suggest?words=${encodeURIComponent('前端')}`
-        // const xhr = new XMLHttpRequest();
-        // // 监听事件
-        // xhr.onreadystatechange = () => {
-        //     if (xhr.readyState !== 4)
-        //         return;
-        //     if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
-        //         console.log(xhr.responseText);
-        //     } else {
-        //         console.log("异常");
-        //     }
-        // }
-
-        // // 准备发送请求
-        // xhr.open('get', url, true);
-
-        // // 真正发送请求 send()通过请求体发送data 必须POST  GET的请求方式，请不传，或者传递null.
-        // xhr.send(null);
-
-        // get请求
-        const url = "https://www.imooc.com/api/http/search/suggest?words=js"
-        const xhr = new XMLHttpRequest();
-        const options = {
-                username: "Lily",
-                age: 18
-            }
-            // 监听事件
-        xhr.onreadystatechange = () => {
-                if (xhr.readyState !== 4)
-                    return;
-                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
-                    console.log(xhr.responseText);
-                } else {
-                    console.log("异常");
-                }
-            }
-            // 准备发送请求
-        xhr.open('post', url, true);
-
-        // 真正发送请求 send()通过请求体发送data 必须POST  GET的请求方式，请不传，或者传递null.
-        xhr.send(JSON.stringify(options));
-    </script>
+    <script type="module" src="./main.js">
+        /* // 创建对象 // const xhr = new XMLHttpRequest(); // // 准备发送请求 // xhr.open("方式", "地址", "是否异步"); // // 真正发送请求 send()通过请求体发送data 必须POST GET的请求方式，请不传，或者传递null. // xhr.send(data); // // 监听事件 // xhr.onreadystatechange = () => { // if (xhr.readyState !== 4) //
+        return; // if ((xhr.status >= 200 && xhr.status
+        < 300) || xhr.status===3 04) { // console.log(xhr.responseText); // } else { // console.log( "异常"); // } // } // get请求 // const url="https://www.imooc.com/api/http/search/suggest?words=js" // const xhr=n ew XMLHttpRequest(); // // 监听事件 // xhr.onreadystatechange=(
+            )=> { // if (xhr.readyState !== 4) // return; // if ((xhr.status >= 200 && xhr.status
+            < 300) || xhr.status===3 04) { // console.log(xhr.responseText); // } else { // console.log( "异常"); // } // } // // 准备发送请求 // xhr.open( 'get', url, true); // // 真正发送请求 send()通过请求体发送data 必须POST GET的请求方式，请不传，或者传递null. // xhr.send(null); // encodeURIComponent
+            // const url=` https://www.imooc.com/api/http/search/suggest?words=${encodeURIComponent( '前端')}` // const xhr=n ew XMLHttpRequest(); // // 监听事件 // xhr.onreadystatechange=( )=> { // if (xhr.readyState !== 4) // return; // if ((xhr.status >= 200 && xhr.status
+                < 300) || xhr.status===3 04) { // console.log(xhr.responseText); // } else { // console.log( "异常"); // } // } // // 准备发送请求 // xhr.open( 'get', url, true); // // 真正发送请求 send()通过请求体发送data 必须POST GET的请求方式，请不传，或者传递null. // xhr.send(null); // get请求 // const
+                    url=` https://www.imooc.com/api/http/search/suggest?words=${encodeURIComponent( '大前端')}` // const xhr=n ew XMLHttpRequest(); // const options={ // username: `${encodeURIComponent( '吴哈哈')}`, // age: 18 // } // // 监听事件 // xhr.onreadystatechange=(
+                    )=> { // if (xhr.readyState !== 4) // return; // if ((xhr.status >= 200 && xhr.status
+                    < 300) || xhr.status===3 04) { // console.log(xhr.responseText); // console.log(JSON.parse(xhr.responseText)); // console.log(JSON.parse(xhr.responseText).data); // show(JSON.parse(xhr.responseText).data); // console.log(typeof xhr.responseText); // }
+                        else { // console.log( "异常"); // } // } // // 准备发送请求 // xhr.open( 'post', url, true); // // xhr.open( 'get', './pan.json', true); // // xhr.open( 'get', './get.json', true); // // xhr.open( 'get', './array.json', true); // // xhr.open(
+                        'get', './arrayf.json', true); // // 真正发送请求 send()通过请求体发送data 必须POST GET的请求方式，请不传，或者传递null. // xhr.send(null); // function show(params) { // var array=[ ] // for (const index of params) { // array.push(index.word); // console.log(index.word);
+                    // } // console.log(array); // } // JSON // JSON.parse() JSON.stringify() // 封装localStorage*/ </script>
 </body>
 
 </html>
