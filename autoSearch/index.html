@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auto search</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        input:focus {
+            border: none;
+            outline: none;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            box-shadow: 0 2px 4px #cccccc;
+        }
+        
+        ul>li {
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+            color: #555555;
+            padding: 0 10px;
+            text-align: left;
+        }
+        
+        ul>li:hover {
+            background-color: #ececec;
+        }
+        
+        #searchbox {
+            text-align: center;
+            width: 300px;
+            margin: 40px auto;
+        }
+        
+        #search {
+            width: calc(100% - 20px);
+            border: solid 1px #cccccc;
+            height: 36px;
+            line-height: 36px;
+            font-size: 14px;
+            color: #555555;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="searchbox">
+        <input type="text" id="search">
+        <ul id="result"></ul>
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>
