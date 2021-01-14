@@ -10,36 +10,35 @@
 <body>
     <div id="list">
         <!--html结构参考如下：-->
-         <dl>
-             <dt>前端</dt>
-             <dd>Vue</dd>
-             <dd>Vue</dd>
-             <dd>Vue</dd>
-         </dl>
+        <dl>
+            <dt>前端</dt>
+            <dd>Vue</dd>
+            <dd>Vue</dd>
+            <dd>Vue</dd>
+        </dl>
     </div>
     <!-- ES6新增方法 -->
     <script>
+        var classfies = {
+                "前端": ["Vue", "Angular", "React"],
+                "后端": ["Php", "Java", "Python"]
+            }
+            /*补充代码*/
 
-    var classfies = {
-        "前端": ["Vue", "Angular", "React"],
-        "后端": ["Php", "Java", "Python"]
-    }
-    /*补充代码*/
+        // 声明一个保存列表结构的变量htmlStr，初始值为空字符串
 
-    // 声明一个保存列表结构的变量htmlStr，初始值为空字符串
+        // 2. 使用Object.entries()方法，获取对象classfies的属性（key）和值（value）；通过属性key，生成dt标签；再通过value，生成该分类下所有的dd标签；一共遍历两次，要对应生成两组dl>dt>dd标签
 
-    // 2. 使用Object.entries()方法，获取对象classfies的属性（key）和值（value）；通过属性key，生成dt标签；再通过value，生成该分类下所有的dd标签；一共遍历两次，要对应生成两组dl>dt>dd标签
+        // 3.  使用模板字符串，将生成的html结构字符串，都拼接到htmlStr上
 
-    // 3.  使用模板字符串，将生成的html结构字符串，都拼接到htmlStr上
+        // 4.  获取list的dom对象，设置其内容为变量htmlStr
 
-    // 4.  获取list的dom对象，设置其内容为变量htmlStr
+        let htmlStr = "";
 
-    let htmlStr = "";
+        let list = document.getElementById('list');
 
-    let list = document.getElementById('list');
-
-    for (let [key, values] of Object.entries(classfies)) {
-    // for (let [key, values] in Object.entries(classfies)) {//{}对象没有Symbol.iterator 只可以forof   []s数组可以用forin forof
+        for (let [key, values] of Object.entries(classfies)) {
+            // for (let [key, values] in Object.entries(classfies)) {//{}对象没有Symbol.iterator 只可以forof   []s数组可以用forin forof
             console.log(key, values);
             htmlStr += `<dl>`
             htmlStr += `<dt> ${key}：</dt>`
@@ -47,8 +46,8 @@
                 htmlStr += `<dd>${item}</dd>`
             }
             htmlStr += `</dl>`
-        } 
-    list.innerHTML = htmlStr;
+        }
+        list.innerHTML = htmlStr;
 
 
         // const s = " s d s "
@@ -144,67 +143,75 @@
         //         name: "李四"
         //     }
         // ]
-    /*补充代码*/
-    // 1. 使用find()方法，找到数据data中，age为20的数据，并将其打印到控制台
+        /*补充代码*/
+        // 1. 使用find()方法，找到数据data中，age为20的数据，并将其打印到控制台
 
 
-    // 2. 使用findIndex()方法，为name为“李四”的数据，添加一个hobby属性，属性值为“游泳”
+        // 2. 使用findIndex()方法，为name为“李四”的数据，添加一个hobby属性，属性值为“游泳”
 
 
-    // console.log(data.find(value=> {
-    //     if(value.age == 20){
-    //         return value
-    //     }
-    // }));
+        // console.log(data.find(value=> {
+        //     if(value.age == 20){
+        //         return value
+        //     }
+        // }));
 
-    // let obj = data.findIndex(value=> {
-    //     if(value.name == '李四'){
-    //         return value
-    //     }
-    // })
+        // let obj = data.findIndex(value=> {
+        //     if(value.name == '李四'){
+        //         return value
+        //     }
+        // })
 
-    // data[obj].bobby = '游泳'
-    // console.log(data[obj]);
+        // data[obj].bobby = '游泳'
+        // console.log(data[obj]);
 
-    // 合并对象
-    // const apple ={
-    //     color:"red",
-    //     shape:"圆形",
-    //     taste:"甜的",
-    //     use:"eat"
-    // }
-    // const pear ={
-    //     color:"yellow",
-    //     shape:"椭圆形",
-    //     taste:"甜的"
-    // }
+        // 合并对象
+        // const apple ={
+        //     color:"red",
+        //     shape:"圆形",
+        //     taste:"甜的",
+        //     use:"eat"
+        // }
+        // const pear ={
+        //     color:"yellow",
+        //     shape:"椭圆形",
+        //     taste:"甜的"
+        // }
 
-    // console.log(Object.assign({},apple,pear));
-    // console.log(apple);
-    // console.log(pear);
-    // console.log({...apple,...pear});
+        // console.log(Object.assign({},apple,pear));
+        // console.log(apple);
+        // console.log(pear);
+        // console.log({...apple,...pear});
 
-    // const logUser = userOptions =>{
-    //     const DEFAULTS ={
-    //         username : "Zhangsan",
-    //         age:0
-    //     }
-        
-    //     let options = Object.assign({},DEFAULTS,userOptions)
-    //     console.log(options);
-    // }
+        // const logUser = userOptions =>{
+        //     const DEFAULTS ={
+        //         username : "Zhangsan",
+        //         age:0
+        //     }
+
+        //     let options = Object.assign({},DEFAULTS,userOptions)
+        //     console.log(options);
+        // }
 
 
-    // logUser();
-    // logUser({})
-    // logUser({username:"HOHO"})
+        // logUser();
+        // logUser({})
+        // logUser({username:"HOHO"})
 
-    // 对象  构造函数方法      返回的是数组
-    // 数组  实例方法          返回的是interator        可遍历的对象
-    // Object.keys()
-    // Object.values()
-    // Object.entries()
+        // 对象  构造函数方法      返回的是数组
+        // 数组  实例方法          返回的是interator        可遍历的对象
+        // Object.keys()
+        // Object.values()
+        // Object.entries()
 
+        const array = ["m", "n", "k", "o", "w"];
+        for (const [key] in array) {
+            console.log(key, array[key]);
+        }
+        console.log("```````````````````````");
+        for (const [key, value] of Object.entries(array)) {
+            console.log(key, value);
+        }
     </script>
 </body>
 
