@@ -63,14 +63,14 @@ const url = 'https://www.imooc.com/api/http/search/suggest?words=js';
 // }).catch(error => console.log(error));
 
 
-//Content-Type: application/json;charset=UTF-8
-// const urlJSONALL = 'https://www.imooc.com/api/http/json/search/suggest?words=js';
-// axios.post(urlJSONALL, {
-//     name: "miky",
-//     age: 19
-// }).then(response => {
-//     console.log(response);
-//     console.log(response.status);
-//     console.log(response.statusText);
-//     console.log(response.data);
-// }).catch(error => console.log(error))
+// Content-Type: application/json;charset=UTF-8
+const urlJSONALL = 'https://www.imooc.com/api/http/json/search/suggest?words=js';
+axios.post(urlJSONALL, {
+    name: "miky",
+    age: 19
+}).then(response => {
+    console.log(response);
+    console.log(response.status);
+    console.log(response.statusText);
+    console.log(response.data);
+}).catch(error => console.log(error))
