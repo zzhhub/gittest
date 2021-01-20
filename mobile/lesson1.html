@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no,minimum-scale=1;miximum-scale=1;">
+    <!-- <meta name="viewport" content="initial-scale=1"> -->
+    <!-- <meta name="viewport" content="initial-scale=2"> -->
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./iconfont/iconfont.css"> -->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2335772_dwfy3g6e9o.css">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        div {
+            background-color: #f00;
+            width: 100px;
+            height: 100px;
+        }
+        
+        .img-p {
+            width: 50%;
+            float: left;
+            padding: 20px;
+            box-sizing: border-box;
+            border: solid 10px #a0a0a0;
+        }
+        
+        .iconfont {
+            font-size: 90px;
+            color: #a0a000;
+            display: flex;
+            display: inline-flex;
+        }
+        
+        li:nth-child(1) {
+            background-color: #a0a0a0;
+        }
+        
+        ul {
+            display: flex;
+            width: 1000px;
+            background-color: aliceblue;
+        }
+        
+        ul>li {
+            flex-grow: 1;
+            width: 100px;
+            height: 40px;
+        }
+        
+        ul>li:nth-child(1) {
+            flex-basis: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>2</li>
+        <li>2</li>
+        <li>2</li>
+        <li>2</li>
+        <!-- 1000-（200+100*3）=500/4= 125 125+200=325 100+125=225 -->
+
+    </ul>
+    <div></div>
+    <!-- 物理像素/设备像素  屏幕分辨率会提到 -->
+    <!-- css像素/逻辑像素/设备独立像素dip  实际开发中的像素  -->
+
+    <!-- 设备像素比 dpr -->
+    <!-- dpr = 设备像素/css像素 dpr = 2 代表 1个css像素用2*2个设备像素来描述 -->
+    <!-- 缩放  改变的是css像素大小  不变的是物理像素 -->
+
+    <!-- 英寸  斜对角线  ppi/dpi：每英寸的物理像素点 -->
+
+    <!-- 视口 viewport -->
+    <img class="img-p" src="../imgs/1.jpg" alt="" srcset="">
+    <img class="img-p" src="../imgs/2.jpg" alt="" srcset="">
+
+    <!-- 图标字体 -->
+    <i class="iconfont icon-qq"></i>
+    <i class="iconfont icon-erweima"></i>
+    <i class="iconfont icon-weixin"></i>
+    <i class="iconfont icon-xiaoxi1"></i>
+
+    <!-- flex -->
+    <!-- display: flex; display: inline-flex; -->
+    <!-- 直接作用子元素   孙子元素不起作用 -->
+    <!-- 7(容器)+6(项目) -->
+    <!-- 容器： -->
+    <!-- display:flex; flex-direction; flex-flow; flex-flow; justify-content; align-items; align-content; -->
+    <!-- 项目： -->
+    <!-- order; flex-grow;0 flex-shrink;1 flex-basis;auto flex;0 1 auto auto(1 1 auto) none(0 0 auto) 1(1 1 0%); align-self; -->
+
+
+    <div class="box" style="display: flex;">
+        <!-- box 容器属性：
+        .box { display: flex | inline-flex; }
+        .box { flex-direction: row | row-reverse | column | column-reverse; }
+        .box { flex-wrap: nowrap | wrap | wrap-reverse; }
+        .box { flex-flow: <flex-direction> || <flex-wrap>; } 默认值为 row nowrap
+        //justify-content 属性定义了项目在主轴上的对齐方式
+        .box { justify-content: flex-start | flex-end | center | space-between | space-around; }
+        //align-items 属性定义项目在交叉轴上如何对齐
+        //stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度
+        .box { align-items: flex-start | fl         ex-end | center | baseline | stretch; }
+        //align-content 属性定义了多根轴线（多行）在交叉轴上的对齐方式 如果项目只有一根轴线（一行），该属性不起作用  stretch（默认值）
+        .box { align-content: flex-start | flex-end | center | space-between | space-around | stretch; }
+        -->
+
+        <div class="item">
+            <!-- item 项目属性：
+                1. order 
+                .item { order: <integer>; }
+                属性定义项目的排列顺序 数值越小，排列越靠前，默认为0
+                2. flex-grow 
+                .item { flex-grow: <number>; /* default 0 */ }
+                属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大；
+                如果所有项目的 flex-grow 属性都为1，则它们将等分剩余空间（如果有的话）；
+                如果一个项目的 flex-grow 属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍；
+                如果有的项目有 flex-grow 属性，有的项目有 width 属性，
+                有 flex-grow 属性的项目将等分剩余空间
+                3. flex-shrink 
+                .item { flex-shrink: <number>; /* default 1 */ }
+                属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小；
+                如果所有项目的 flex-shrink 属性都为1，当空间不足时，都将等比例缩小；
+                如果一个项目的 flex-shrink 属性为0，其他项目都为1，则空间不足时，前者不缩小
+                负值对该属性无效。
+                4. flex-basis
+                .item { flex-basis: <length>; | auto; /* default auto */ }
+                属性定义了在分配多余空间之前，项目占据的主轴空间（main size）
+                浏览器根据这个属性，计算主轴是否有多余空间
+                它的默认值为auto，即项目的本来大小
+                5. flex
+                .item { flex: none | [ <flex-grow> <flex-shrink>? || <flex-basis> ] }
+                属性是 flex-grow, flex-shrink 和 flex-basis 的简写，默认值为0 1 auto  
+                后两个属性可选
+                该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)  flex:1; flex:1 1 0%
+                6. align-self
+                .item { align-self: auto | flex-start | flex-end | center | baseline | stretch; }
+                align-self 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性
+                默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch
+             -->
+            1000-200=800/3 1 1 1 1 325 200
+
+        </div>
+    </div>
+
+</body>
+
+</html>

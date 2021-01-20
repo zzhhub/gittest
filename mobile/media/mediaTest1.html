@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        p {
+            color: red;
+            text-align: center;
+        }
+        /*此处写代码*/
+        /* （1）浏览器窗口宽度大于1100px时，文字颜色为红色；
+
+        （2）小于1100px大于960px时，文字颜色为橙色；
+
+        （3）小于960px大于800px时，文字颜色为黄色；
+
+        （4）小于800px大于750px时，文字颜色为绿色；
+
+        （5）小于750px大于600px时；文字颜色为青色；
+
+        （6）小于600px大于450px时，文字颜色为蓝色；
+
+        （7）小于450px时，文字颜色为紫色。 */
+        
+        @media screen and (max-width: 1100px) {
+            p {
+                color: orange;
+            }
+        }
+        
+        @media screen and (max-width: 960px) {
+            p {
+                color: yellow;
+            }
+        }
+        
+        @media screen and (max-width: 800px) {
+            p {
+                color: green;
+            }
+        }
+        
+        @media screen and (max-width: 750px) {
+            p {
+                color: yellowgreen;
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            p {
+                color: blue;
+            }
+        }
+        
+        @media screen and (max-width: 450px) {
+            p {
+                color: purple;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        我的颜色会随着屏幕大小的变化而变化。
+    </p>
+</body>
+
+</html>

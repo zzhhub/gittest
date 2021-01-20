@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>3.6 flex布局--实例</title>
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background-color: #e2e2e2;
+            color: #595B66;
+        }
+        
+        a {
+            font-size: 12px;
+            color: #686868;
+            text-decoration: none;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        html {
+            height: 100%;
+        }
+        
+        body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            width: 100%;
+            height: 50px;
+            background-color: rgba(222, 24, 27, 0.9);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .main {
+            color: #fff;
+            flex: 1;
+            display: flex;
+        }
+        
+        .main-content {
+            background-color: green;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .main-sidebar {
+            width: 150px;
+            background-color: pink;
+            order: -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .tabbar-container {
+            width: 100%;
+            height: 50px;
+            background-color: #fff;
+        }
+        
+        .tabbar {
+            height: 100%;
+            display: flex;
+        }
+        
+        .tabbar-item {
+            height: 100%;
+            flex: 1;
+        }
+        
+        .tabbar-link {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .tabbar-link .iconfont {
+            font-size: 24px;
+        }
+        
+        .tabbar-item-active .tabbar-link {
+            color: #de181b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">header</header>
+
+    <div class="main">
+        <div class="main-content">content</div>
+        <div class="main-sidebar">sidebar</div>
+    </div>
+
+    <footer class="tabbar-container">
+        <ul class="tabbar">
+            <li class="tabbar-item tabbar-item-active">
+                <a href="###" class="tabbar-link">
+                    <i class="iconfont icon-erweima"></i>
+                    <span>首页</span>
+                </a>
+            </li>
+            <li class="tabbar-item">
+                <a href="###" class="tabbar-link">
+                    <i class="iconfont icon-xiaoxi1"></i>
+                    <span>分类页</span>
+                </a>
+            </li>
+            <li class="tabbar-item">
+                <a href="###" class="tabbar-link">
+                    <i class="iconfont icon-qq"></i>
+                    <span>购物车</span>
+                </a>
+            </li>
+            <li class="tabbar-item">
+                <a href="###" class="tabbar-link">
+                    <i class="iconfont icon-weixin"></i>
+                    <span>个人中心</span>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+</body>
+
+</html>

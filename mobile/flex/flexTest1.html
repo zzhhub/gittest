@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /* 1、logo、导航项、登陆注册按钮这3项在水平和垂直方向上都对齐，而且它们之间的距离也相等。
+
+            2、导航项各项之间的距离是一样的。
+
+            3、登录、注册按钮之间的距离也是一样的。 
+
+            1、对容器进行弹性布局（导航项容器和按钮也要使用弹性布局）
+
+            2、三大容器（logo、导航项、按钮）在水平方向及垂直方向均对齐，且之间距离一样
+
+            3、导航项以及按钮之间的各项距离也相等*/
+        /*在此处补充代码*/
+        
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        header {
+            background-color: #000000;
+        }
+        
+        .logo {
+            width: 30%;
+        }
+        
+        .nav {
+            list-style: none;
+            width: 55%;
+        }
+        
+        .nav li {
+            color: #ffffff;
+            font-size: 14px;
+        }
+        
+        .login {
+            width: 15%;
+        }
+        
+        .login input[type='button'] {
+            box-sizing: border-box;
+            background-color: #ffa500;
+            color: #ffffff;
+            padding: 4px 6px;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        
+        .login {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="http://climg.mukewang.com/59feb59700019dab01910057.png" alt="">
+        </div>
+        <ul class="nav">
+            <li>课程</li>
+            <li>路径</li>
+            <li>猿问</li>
+            <li>手记</li>
+        </ul>
+        <div class="login">
+            <input type="button" value="登录">
+            <input type="button" value="注册">
+        </div>
+    </header>
+</body>
+
+</html>

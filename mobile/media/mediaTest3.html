@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../flex/移动web开发入门（源码）/css/iconfont.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background-color: #e2e2e2;
+            color: #595B66;
+        }
+        
+        a {
+            font-size: 12px;
+            color: #686868;
+            text-decoration: none;
+        }
+        
+        li {
+            list-style: none;
+        }
+        /* html {
+            font-size: 13px;
+        }
+        
+        .paraph {
+            font-size: 1rem;
+            rem 相对于 html 字体大小计算
+        }
+        
+        .emP {
+            font-size: 14px;
+            height: 3em;
+            em 相对于 本身元素字体大小 本身没有往父级查找继承
+        } */
+        
+        html {
+            font-size: 12px;
+        }
+        
+        .tabbar-container {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            z-index: 1000;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 0 10px 0 rgba(154, 141, 141, 0.6);
+            height: 50px;
+            height: 2.5rem;
+        }
+        
+        .tabbar-link .iconfont {
+            font-size: 1.2rem;
+        }
+        
+        .tabbar,
+        .tabbar-item,
+        .tabbar-link {
+            height: 100%;
+        }
+        
+        .tabbar {
+            display: flex;
+        }
+        
+        .tabbar-item {
+            flex: 1;
+        }
+        
+        .tabbar-link {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.6rem;
+        }
+        
+        .tabbar-item-active .tabbar-link {
+            color: #de181b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tabbar-container">
+        <ul class="tabbar">
+            <li class="tabbar-item tabbar-item-active">
+                <a href="###" class="tabbar-link">
+                    <i class="iconfont icon-home"></i>
+                    <span>首页</span>
+                </a>
+            </li>
+            <li class="tabbar-item">
+                <a href="###" class="tabbar-link">
+                    <i class="iconfont icon-category"></i>
+                    <span>分类页</span>
+                </a>
+            </li>
+            <li class="tabbar-item">
+                <a href="###" class="tabbar-link">
+                    <i class="iconfont icon-cart"></i>
+                    <span>购物车</span>
+                </a>
+            </li>
+            <li class="tabbar-item">
+                <a href="###" class="tabbar-link">
+                    <i class="iconfont icon-personal"></i>
+                    <span>个人中心</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        fontResize();
+        window.onresize = fontResize;
+
+        function fontResize() {
+            const el = document.documentElement;
+            const cWidth = el.clientWidth;
+            console.log(cWidth);
+            // 375px 1rem = 20px;
+            el.style.fontSize = cWidth / 375 * 20 + 'px'
+        }
+
+
+        // setRemUnit();
+
+        // window.onresize = setRemUnit;
+
+        // function setRemUnit() {
+        //     var docEl = document.documentElement;
+        //     var viewWidth = docEl.clientWidth;
+
+        //     docEl.style.fontSize = viewWidth / 375 * 20 + 'px';
+        // }
+    </script>
+</body>
+
+</html>
