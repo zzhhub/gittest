@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/mediaTest5.css">
+
+</head>
+
+<body>
+    <header class="hearder-container">
+        <div class="container">
+            <div class="row header-inner-container">
+                <div class="header-toggle col-2 d-md-none">
+                    <div class="toggle-btn" id="toggle-btn">
+                        <div class="toggle-btn-item"></div>
+                        <div class="toggle-btn-item"></div>
+                    </div>
+                </div>
+
+                <div class="header-nav-container col-md-5 d-none d-md-block">
+                    <ul class="header-nav-inner-container">
+                        <li class="header-nav-item"><a href="#" class="header-nav-item">首页</a></li>
+                        <li class="header-nav-item"><a href="#" class="header-nav-item">关于</a></li>
+                        <li class="header-nav-item"><a href="#" class="header-nav-item">盛业合作</a></li>
+                    </ul>
+                </div>
+
+                <div class="header-logo-container col-10 col-md-7">
+                    <a href="#" class="header-a-link"><img src="https://www.imooc.com/static/img/index/logo2020.png" alt="" class="header-logo"></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="toggle-nav-container d-md-none" id="toggle-nav">
+        <ul class="toggle-nav">
+            <li class="toggle-nav-item">
+                <a href="#" class="toggle-nav-link">首页</a>
+            </li>
+            <li class="toggle-nav-item">
+                <a href="#" class="toggle-nav-link">关于</a>
+            </li>
+            <li class="toggle-nav-item">
+                <a href="#" class="toggle-nav-link">盛业合作</a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        const toggleBtn = document.getElementById('toggle-btn');
+        const toggleNav = document.getElementById('toggle-nav');
+
+        toggleBtn.addEventListener('click', () => {
+            if (toggleNav.classList.contains('show')) {
+                toggleNav.classList.remove('show');
+            } else {
+                toggleNav.classList.add('show');
+            }
+        })
+    </script>
+    <!-- 
+        （1）在中屏以上，左侧是导航，中间是图片
+
+        （2）在中屏以下，左侧导航变成按钮，点击按钮导航缓缓下滑
+
+
+
+        任务要求：
+
+            1、按照效果视频实现基本布局
+
+            2、左侧导航可以使用定位显示在头部上面
+
+            3、相关图片可以从资料中进行下载
+
+            4、导航缓缓下滑可以使用CSS3过渡完成
+     -->
+</body>
+
+</html>

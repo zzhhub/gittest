@@ -1,0 +1,12 @@
+.img-container {
+    margin-top: 100px;
+}
+
+.col-img {
+    overflow: hidden;
+}
+
+.pic {
+    width: 100%;
+    height: 100%;
+}
