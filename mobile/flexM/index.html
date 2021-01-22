@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .header-container {
+            width: 100%;
+            height: 3.2rem;
+            background-color: brown;
+            border-bottom: solid 1px #000000;
+        }
+        
+        .main-container {
+            width: 100%;
+        }
+        
+        .slider-container {
+            height: 12.8rem;
+            background-color: aliceblue;
+        }
+        
+        .nav-container {
+            height: 6.4rem;
+            background-color: aquamarine;
+        }
+        
+        .recommend-container {
+            height: 42.666667rem;
+            background-color: bisque;
+        }
+        
+        .tabbar-container {
+            height: 4.266667rem;
+            background-color: cadetblue;
+        }
+        /* layout */
+        /* layout */
+        /* 样式 */
+        
+        .header-container,
+        .tabbar-container {
+            position: fixed;
+            left: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+        
+        .header-container {
+            top: 0;
+        }
+        
+        .tabbar-container {
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 安装 cssrem 插件  设置中配置  18.75   750/18.75=40  1rem=40px -->
+
+
+    <div class="header-container">
+        header
+    </div>
+    <div class="main-container">
+        <div class="slider-container">
+            slider
+        </div>
+        <div class="nav-container">
+            nav
+        </div>
+        <div class="recommend-container">
+            recommend
+        </div>
+    </div>
+    <div class="tabbar-container">
+        tabbar
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
