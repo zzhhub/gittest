@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 1020px;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin: 40px auto;
+        }
+        
+        .uparrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            text-align: center;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: pink;
+            color: beige;
+            -webkit-tap-highlight-color: transparent;
+            /* transform: translate3d(x,y,0); */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 移动端事件 -->
+    <!-- touch -->
+    <!-- pointer -->
+    <div class="box" id="box"></div>
+
+    <a id="up" class="uparrow">&uarr;</a>
+    <div id="start"></div>
+    <div id="move"></div>
+    <div id="end"></div>
+    <script src="./index.js"></script>
+
+</body>
+
+</html>
