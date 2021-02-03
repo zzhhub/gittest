@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./alert.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        .out-box {
+            border: solid 1px #cccccc;
+            padding: 20px;
+            width: 240px;
+            margin: 100px auto;
+        }
+        
+        .overhidden {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            line-height: 30px;
+            text-overflow: ellipsis;
+            border-bottom: dashed 1px #cccccc;
+        }
+        
+        .head {
+            font-weight: bold;
+            font-size: 20px;
+            color: black;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            line-height: 30px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            word-wrap: break-word;
+            white-space: normal;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <div id="ul">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $("p:even").css({
+            "background": "red"
+        })
+    </script> -->
+    <div class="cover">
+        <span class="layer">
+            <div class="p-msg">确认要删除吗?</div>
+            <div class="btn-groups">
+                <input type="button" class="confirm" value="确认">
+                <input type="button" class="cancel" value="取消">
+            </div>
+        </span>
+    </div>
+
+    <!-- <div class="out-box">
+        <div class="overhidden">大大大大萨达多撒大大大大萨达多撒萨达多撒</div>
+        <div class="overhidden">大大大大萨达多撒大大大大萨达多撒萨达多撒</div>
+        <div class="overhidden">大大大大萨达多撒大大大大萨达多撒萨达多撒</div>
+        <div class="overhidden">大大大大萨达多撒大大大大萨达多撒萨达多撒</div>
+        <div class="overhidden">大大大大萨达多撒大大大大萨达多撒萨达多撒</div>
+    </div> -->
+    <!-- <div class="out-box">
+        <h1 class="head">岳阳楼记</h1>
+        <div class="content">庆历四年春，滕子京谪守巴陵郡。越明年，政通人和，百废具兴，乃重修岳阳楼，增其旧制，刻唐贤今人诗赋于其上，属予作文以记之。</div>
+    </div> -->
+</body>
+
+</html>
