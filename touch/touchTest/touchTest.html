@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            height: 400px;
+            background-color: rgb(226, 186, 133);
+        }
+        
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- div元素在页面中进行拖拽，但是不会超出页面的边界。
+
+任务要求：
+
+1、给body设置固定高度和背景颜色
+2、添加块元素设置样式并通过js获取块元素
+
+3、定义一个drag方法，方法中有两个参数，一个参数是拖拽的对象，另一个参数是是否允许拖拽
+
+4、对元素绑定touch事件，可以通过触摸位置的pageX和pageY来计算元素拖拽的位置
+
+5、可以使用transform中的translate3d()样式来改变元素移动的位置
+
+6、元素移动到边界的时候需要添加限制条件，不允许超出边 -->
+
+    <div class="box" id="box"></div>
+    <script src="./touchTest.js"></script>
+</body>
+
+</html>

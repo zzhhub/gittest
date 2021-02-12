@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    border: none;
+    outline: none;
+    -webkit-tap-highlight: none;
+}
+
+.cover {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layer {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: inline-block;
+}
+
+.p-msg {
+    color: #222222;
+    margin-bottom: 10px;
+    line-height: 24px;
+}
+
+.btn-groups {
+    display: flex;
+    justify-content: space-around;
+}
+
+input[type='button'] {
+    color: #ffffff;
+    text-align: center;
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.confirm {
+    background-color: #2465dd;
+}
+
+.cancel {
+    background-color: #cccccc;
+}

@@ -1,0 +1,30 @@
+.content-container {
+    background-color: #e9e9e9;
+    padding: .533333rem .533333rem .266667rem .533333rem;
+}
+
+.content-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content-item {
+    width: 47.5%;
+    padding: 1%;
+    background-color: #ffffff;
+    margin-bottom: .266667rem;
+}
+
+.content-link {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.img-pic {
+    display: block;
+}

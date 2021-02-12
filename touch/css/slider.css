@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    border: none;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* 组件 */
+
+.slider {
+    position: relative;
+    height: 183px;
+    width: 100%;
+}
+
+
+/* slider-item-container */
+
+.slider-item-container,
+.slider-item,
+.slider-link,
+.slider-img {
+    width: 100%;
+    height: 100%;
+}
+
+.slider-item-container {
+    display: flex;
+}
+
+.slider-item {
+    flex-shrink: 0;
+    /* 禁缩放 */
+}
+
+.slider-link {
+    display: block;
+}
+
+
+/* slider-indicator-container */
+
+.slider-indicator-container {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.slider-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-right: 8px;
+}
+
+.slider-indicator-active {
+    background-color: rgba(255, 102, 0, 1);
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    img {
+        max-width: 100%;
+        min-height: 300px;
+    }
+</style>
+
+<body>
+    <div>
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/1.jpg" alt="" class="lazyload-img">
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/2.jpg" alt="" class="lazyload-img">
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/3.jpg" alt="" class="lazyload-img">
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/4.jpg" alt="" class="lazyload-img">
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/1.jpg" alt="" class="lazyload-img">
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/2.jpg" alt="" class="lazyload-img">
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/3.jpg" alt="" class="lazyload-img">
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/4.jpg" alt="" class="lazyload-img">
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/1.jpg" alt="" class="lazyload-img">
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/2.jpg" alt="" class="lazyload-img">
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/3.jpg" alt="" class="lazyload-img">
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/4.jpg" alt="" class="lazyload-img">
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/1.jpg" alt="" class="lazyload-img">
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/2.jpg" alt="" class="lazyload-img">
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/3.jpg" alt="" class="lazyload-img">
+        <img src="../moreAJAX/images/loading.gif" data-src="../imgs/4.jpg" alt="" class="lazyload-img">
+        <div id="bttom">
+            <img src="../moreAJAX/images/loading.gif" alt="" srcset="">
+        </div>
+    </div>
+    <script>
+        // slice 返回新数组
+        // splice 会改变原数组  删除元素
+
+        const loadimgClass = '.lazyload-img';
+        let imgArr = Array.prototype.slice.call(document.querySelectorAll(loadimgClass));
+
+        let timer;
+        //  懒加载
+        lazyloadimgs();
+        // window.addEventListener('scroll', function() {
+        //     clearTimeout(timer)
+        //     timer = setTimeout(function() {
+        //         lazyloadimgs();
+        //     }, 500)
+        // }, false);
+
+        function lazyloadimgs() {
+            for (let i = 0; i < imgArr.length; i++) {
+                if (inshowArea(imgArr[i])) {
+                    imgArr[i].src = imgArr[i].getAttribute('data-src');
+                    imgArr.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+
+        function inshowArea(el) {
+            const rect = el.getBoundingClientRect();
+
+            return rect.left < window.innerWidth && rect.right > 0 && rect.top < window.innerHeight && rect.bottom > 0;
+        }
+        lazyUsefulfileon();
+        window.addEventListener('scroll', lazyUsefulfile, false);
+        // 按需加载
+        function lazyUsefulfileon() {
+            if (inshowArea(document.getElementById('bttom'))) {
+                const script = document.createElement('script');
+                // script.src = './layzyload.js';
+
+                setTimeout(function() {
+                    script.src = './layzyload.js';
+                }, 500)
+
+                document.body.appendChild(script);
+            }
+        }
+
+        function lazyUsefulfile() {
+            if (inshowArea(document.getElementById('bttom'))) {
+                const script = document.createElement('script');
+                // script.src = './layzyload.js';
+
+                setTimeout(function() {
+                    script.src = './layzyload.js';
+                }, 500)
+
+                document.body.appendChild(script);
+                window.removeEventListener('scroll', lazyUsefulfile, false)
+            }
+        }
+
+        // 预加载
+        // 提前释放  src赋值
+    </script>
+</body>
+
+</html>
