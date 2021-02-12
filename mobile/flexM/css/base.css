@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-size: 12px;
+}
+
+a {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+img {
+    vertical-align: top;
+    width: 100%;
+    border: none;
+}
+
+input {
+    font-size: 12px;
+    border: none;
+    outline: none;
+}
+
+[data-dpr='2']html,
+[data-dpr='2']body,
+[data-dpr='2']input,
+[data-dpr='2']a {
+    font-size: 24px;
+}
+
+[data-dpr='3']html,
+[data-dpr='3']body,
+[data-dpr='3']input,
+[data-dpr='3']a {
+    font-size: 36px;
+}

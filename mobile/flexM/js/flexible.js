@@ -3,10 +3,10 @@
 
     let view = document.documentElement;
 
-    const viewport = document.querySelector('meta[name="viewport"]');
+    let viewport = document.querySelector('meta[name="viewport"]');
     const maxWidth = 540;
     const minWidth = 320;
-
+    console.log(window.devicePixelRatio);
     let dpr = window.devicePixelRatio || 1;
     dpr = dpr >= 3 ? 3 : (dpr >= 2 ? 2 : 1);
 
