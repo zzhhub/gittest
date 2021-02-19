@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="root">
+    </div>
+
+    <script>
+        // // 例1
+        // const app = Vue.createApp({
+        //     data() {
+        //         return {
+        //             currentItem: 'input-item'
+        //         }
+        //     },
+        //     methods: {
+        //         handleClick() {
+        //             if (this.currentItem === 'input-item') {
+        //                 this.currentItem = 'common-item'
+        //             } else {
+        //                 this.currentItem = 'input-item'
+        //             }
+        //         }
+        //     },
+        //     template: `
+        //        <input-item v-show="currentItem === 'input-item'"/>
+        //        <common-item v-show="currentItem === 'common-item'"/>
+        //        <button @click="handleClick">切换</button>
+        //     `
+        // })
+
+        // app.component('input-item', {
+        //     template: `
+        //         <input />
+        //     `
+        // })
+
+        // app.component('common-item', {
+        //     template: `
+        //         <div>Hello  World</div>
+        //     `
+        // })
+
+        // // 例2 优化代码结构-动态组件 keep-alive(记住缓存) component
+        // const app = Vue.createApp({
+        //     data() {
+        //         return {
+        //             currentItem: 'input-item'
+        //         }
+        //     },
+        //     methods: {
+        //         handleClick() {
+        //             if (this.currentItem === 'input-item') {
+        //                 this.currentItem = 'common-item'
+        //             } else {
+        //                 this.currentItem = 'input-item'
+        //             }
+        //         }
+        //     },
+        //     template: `
+        //         <keep-alive>
+        //             <component :is="currentItem" />
+        //         </keep-alive>
+        //         <button @click="handleClick">切换</button>
+        //     `
+        // })
+
+        // app.component('input-item', {
+        //     template: `
+        //         <input />
+        //     `
+        // })
+
+        // app.component('common-item', {
+        //     template: `
+        //         <div>Hello  World</div>
+        //     `
+        // })
+
+        // 例2 异步组件 
+
+        // const AsyncCommonItem = Vue.defineAsyncComponent(() => {
+        //     return new Promise(() => {
+
+        //     })
+        // })
+
+        // const app = Vue.createApp({
+        //     template: `
+        //         <div><common-item /></div>
+        //     `
+        // })
+
+        // app.component('common-item', {
+        //     template: `
+        //         <div>Hello  World</div>
+        //     `
+        // })
+
+        // app.component('async-common-item', AsyncCommonItem)
+
+
+        // const app = Vue.createApp({
+        //     template: `
+        //         <div><common-item /></div>
+        //     `
+        // })
+
+        // app.component('common-item', {
+        //     template: `
+        //         <div>Hello  World</div>
+        //     `
+        // })
+
+        // app.component('async-common-item', Vue.defineAsyncComponent(() => {
+        //     return new Promise((resolve, reject) => {
+        //         // 3秒后触发  异步组件
+        //         setTimeout(() => {
+        //             resolve({
+        //                 template: `<div>这是一个异步组件</div>`
+        //             })
+        //         }, 3000);
+        //     })
+        // }))
+
+        // 补充
+        // const app = Vue.createApp({
+        //     data() {
+        //         return {
+        //             count: 1
+        //         }
+        //     },
+        //     template: `
+        //         <div @click="count += 1" v-once>{{count}}</div>
+        //     `
+        // })
+
+        // const app = Vue.createApp({
+        //     data() {
+        //         return {
+        //             count: 1
+        //         }
+        //     },
+        //     mounted() {
+        //          console.log(this.$refs.count) //ref="count" 的 Dom
+        //          console.log(this.$refs.common.show()) //获取子组件/Dom 的方法、应用（proxy）
+        //     },
+        //     template: `
+        //         <div @click="count += 1" ref="count">{{count}}</div>
+        //         <common-item ref="common"/>
+        //     `
+        // })
+
+        // app.component('common-item', {
+        //     methods: {
+        //         show() {
+        //             alert("show")
+        //         }
+        //     },
+        //     template: `
+        //         <div>Hello World</div>
+        //     `
+        // })
+
+        // const app = Vue.createApp({
+        //     data() {
+        //         return {
+        //             count: "我们"
+        //         }
+        //     },
+        //     template: `
+        //         <child :count="count"/>
+        //     `
+        // })
+
+        // app.component('child', {
+        //     props: ['count'],
+        //     template: `
+        //         <child-child :count="count" />
+        //     `
+        // })
+
+        // app.component('child-child', {
+        //     props: ['count'],
+        //     template: `
+        //         <div>{{count}}</div>
+        //     `
+        // })
+
+        // provide inject 组件多层传递数值
+        const app = Vue.createApp({
+            data() {
+                return {
+                    count: 1
+                }
+            },
+            // provide: {
+            //     count: "我们"
+            // },
+            provide() {
+                return {
+                    count: this.count
+                }
+            },
+            template: `
+                <child />
+                <button @click="count += 1">+1</button>
+            `
+        })
+
+        app.component('child', {
+            template: `
+                <child-child />
+            `
+        })
+
+        app.component('child-child', {
+            inject: ['count'],
+            template: `
+                <div>{{count}}</div>
+            `
+        })
+
+        const vm = app.mount('#root');
+    </script>
+</body>
+
+</html>
