@@ -1,0 +1,14 @@
+@mixin inline-overhidden($width) {
+    width: $width;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+@mixin ipad ($height){
+    @media screen and (min-width:768px) {
+        @content;
+        height: $height;
+    }
+}

@@ -1,0 +1,34 @@
+@import './viriable';
+@import './mixins';
+
+.header-title{
+    @include inline-overhidden(100%);
+}
+.header-side-title{
+    @include inline-overhidden(400px);
+}
+
+header h1{
+    width: 100%;
+    height: 400px;
+    @include ipad(445px){
+        width: 600px;
+    }
+}
+
+.header {
+    color: darken($text-color, 20%);
+    background-color: $background-color;
+    .link {
+        font-size: $text-fontSize;
+        background-color: lighten($background-color, 20%);
+        color: $text-color;
+        &:hover {
+            color: opacify($text-color, 0.4);
+            text-decoration: underline;
+        }
+    }
+}
+
+
+

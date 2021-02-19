@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <div id="root1"></div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    count: 1
+                }
+            },
+            mounted() {
+                setInterval(() => {
+                    this.count++;
+                }, 1000)
+                console.log(this);
+            },
+            template: `
+            <div>{{count}}</div>
+            `
+        })
+        const app1 = Vue.createApp({
+            data() {
+                return {
+                    count: 1
+                }
+            },
+            mounted() {
+                setInterval(() => {
+                    this.count++;
+                    const vm = app.mount('#root');
+                }, 1000)
+            },
+            template: `
+            <div>{{count}}</div>
+            `
+        })
+        const vm = app.mount('#root');
+        const vm1 = app1.mount('#root1');
+        // console.log(app, this);
+        // console.log(app1, this);
+        console.log(vm);
+    </script>
+</body>
+
+</html>
