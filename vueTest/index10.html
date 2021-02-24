@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f00;
+        }
+        
+        .mask {
+            background-color: rgba(66, 66, 66, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <div id="yes"></div>
+
+    <script>
+        const myPlugin = {
+            install(app, options) {
+                // 提供数据
+                app.provide("name", "Dell");
+                // 生成自定义属性
+                app.directive('focus', {
+                    mounted(el) {
+                        el.focus();
+                    },
+                });
+                app.mixin({
+                    mounted() {
+                        console.log('myPlugin mixin')
+                    },
+                })
+            }
+        }
+
+        // 动画效果
+        const app = Vue.createApp({
+            data() {
+                return {
+                    show: false
+                }
+            },
+            methods: {
+                handleClick() {
+                    this.show = !this.show
+                }
+
+            },
+            template: `
+            <div class="area">
+                <div></ 
+                <button @click="handleClick">按钮</button>
+                <teleport to="#yes">
+                    <div class="mask" v-show="show"></div>
+                </teleport>
+            </div>
+            `
+        });
+
+        const vm = app.mount('#root');
+    </script>
+</body>
+
+</html>

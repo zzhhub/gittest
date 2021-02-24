@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>composition todoList</title>
+    <style>
+
+    </style>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <div id="yes"></div>
+
+    <script>
+        // composition
+        const app = Vue.createApp({
+
+            setup(props) {
+                const {
+                    ref,
+                    reactive
+                } = Vue;
+                const inputValue = ref('');
+                const list = reactive([]);
+                const handleInputValue = (e) => {
+                    inputValue.value = e.target.value;
+                }
+                const handleInputFocus = () => {
+                    inputValue.value = '';
+                }
+                const handleClick = () => {
+                    if (inputValue.value.length > 0)
+                        list.push(inputValue.value)
+                }
+                return {
+                    inputValue,
+                    list,
+                    handleInputValue,
+                    handleClick,
+                    handleInputFocus
+                }
+            },
+
+
+            template: `
+            <div class="area">
+                <div> 
+                <input :value="inputValue" @input="handleInputValue" @focus="handleInputFocus"/>
+                <div>{{inputValue}}</div>
+                <button @click="handleClick">提交</button>
+                </div>
+                <ul>
+                    <li v-for="(item,index) in list" :key="index">{{item}}</li>
+                </ul>
+            </div>
+            `
+        });
+
+        const vm = app.mount('#root');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 动画 */
+        
+        @keyframes leftToRight {
+            0% {
+                transform: translateX(0px);
+            }
+            50% {
+                transform: translateX(50px);
+            }
+            100% {
+                transform: translateX(100px);
+            }
+        }
+        
+        .animation {
+            animation: leftToRight 3s;
+        }
+        /* 过度 */
+        
+        .transition {
+            transition: 3s background-color ease-in-out;
+            color: #fff;
+        }
+        
+        .blue {
+            background-color: blue;
+        }
+        
+        .green {
+            background-color: green;
+        }
+    </style>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script>
+        // // 动画效果
+        // const app = Vue.createApp({
+        //     data() {
+        //         return {
+        //             animate: {
+        //                 animation: false
+        //             }
+        //         }
+        //     },
+        //     methods: {
+        //         handleClick() {
+        //             this.animate.animation = !this.animate.animation;
+        //         }
+        //     },
+        //     template: `
+        //         <div :class="animate">hello world</div>
+        //         <button @click="handleClick">切换</button>
+        //     `
+        // });
+
+
+        // // 动画效果
+        // const app = Vue.createApp({
+        //     data() {
+        //         return {
+        //             animate: {
+        //                 transition: true,
+        //                 blue: true,
+        //                 green: false
+        //             }
+        //         }
+        //     },
+        //     methods: {
+        //         handleClick() {
+        //             this.animate.blue = !this.animate.blue;
+        //             this.animate.green = !this.animate.green;
+        //         }
+        //     },
+        //     template: `
+        //         <div :class="animate">hello world</div>
+        //         <button @click="handleClick">切换</button>
+        //     `
+        // });
+
+        // 动画效果
+        const app = Vue.createApp({
+            data() {
+                return {
+                    backColor: {
+                        backgroundColor: 'blue'
+                    }
+                }
+            },
+            methods: {
+                handleClick() {
+                    if (this.backColor.backgroundColor === 'blue') {
+                        this.backColor.backgroundColor = 'green'
+                    } else {
+                        this.backColor.backgroundColor = 'blue'
+                    }
+                }
+            },
+            template: `
+                <div class="transition" :style="backColor">hello world</div>
+                <button @click="handleClick">切换</button>
+            `
+        });
+
+        const vm = app.mount('#root');
+    </script>
+</body>
+
+</html>
